@@ -33,3 +33,7 @@ W
 'src/main/kotlin/entities/allies/Ally.kt,8\b\8b39334444f07ddee542061c034c7ab4978d2c27
 W
 'src/main/kotlin/controller/Direction.kt,2\2\224c45f005e2654e944f49fbf56d3223cb8908e8
+k
+;src/main/kotlin/entities/enemies/strongenemies/Voldemort.kt,e\4\e4e2ece3f7d53040d718f4b5ac979b7d64f2694a
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d

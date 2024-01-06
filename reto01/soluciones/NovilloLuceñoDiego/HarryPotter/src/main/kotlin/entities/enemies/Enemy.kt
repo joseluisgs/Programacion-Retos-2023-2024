@@ -1,7 +1,7 @@
 package org.example.entities.enemies
 
 import org.example.controller.Position
-import org.example.objects.Entity
+import org.example.entities.Entity
 
 const val SUCCESSRATE = 50
 

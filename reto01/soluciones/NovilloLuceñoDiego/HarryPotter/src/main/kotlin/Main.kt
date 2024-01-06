@@ -28,7 +28,9 @@ fun main() {
             controller.startround()
         }while (!controller.winningconditionsaremet())
         println("Congratulations! Harry collected all horrocruxes!!")
+        println()
         controller.printstats()
+        println()
         println("Do you want to play again? (Y/N)")
 
     }while (playagain(readln()))

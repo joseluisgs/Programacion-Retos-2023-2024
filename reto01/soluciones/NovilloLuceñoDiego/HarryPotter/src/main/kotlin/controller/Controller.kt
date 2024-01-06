@@ -16,6 +16,7 @@ class Controller (
     private val player : Player)
 {
     companion object{
+
         fun creategameinstance() : Controller{
             val newPlayer = Player(Position(STARTINGPOSITION, STARTINGPOSITION))
             val newDungeon = Board()
@@ -33,7 +34,6 @@ class Controller (
     fun startround(){
         dungeon.showmap()
         trytomove()
-
     }
 
     private fun trytomove(){
@@ -50,40 +50,33 @@ class Controller (
 
     private fun dealwithwhatsthere(direction: Direction) {
         val newPosition = Position((player.position.X + direction.X), (player.position.Y + direction.Y))
-
-        if (dungeon.trueBoard[newPosition.X][newPosition.Y] != null) {
-            when (dungeon.trueBoard[newPosition.X][newPosition.Y]) {
-                is Ally -> {
-                    dungeon.unlocknewposition(newPosition)
-                    dungeon.showmap()
-                    foundally(newPosition)
-                }
-
-                is Enemy -> {
-                    dungeon.unlocknewposition(newPosition)
-                    dungeon.showmap()
-                    foundenemy(newPosition)
-                }
-
-                is Horrocrux -> {
-                    dungeon.unlocknewposition(newPosition)
-                    dungeon.showmap()
-                    horrocruxesfound++
-                    println("Harry found a horrocrux! ($horrocruxesfound/7)")
-                    dungeon.trueBoard[newPosition.X][newPosition.Y] = null
-                }
+        val currentposition = dungeon.trueBoard[newPosition.X][newPosition.Y]
+        dungeon.unlocknewposition(newPosition)
+        when (currentposition){
+            is Ally -> {
+                dungeon.showmap()
+                foundally(newPosition)
             }
-        } else {
-            println("Harry´s safe for now...")
-            dungeon.unlocknewposition(newPosition)
+
+            is Enemy -> {
+                dungeon.showmap()
+                foundenemy(newPosition)
+            }
+
+            is Horrocrux -> {
+                dungeon.showmap()
+                horrocruxesfound++
+                println("Harry found a horrocrux! ($horrocruxesfound/7)")
+                dungeon.trueBoard[newPosition.X][newPosition.Y] = null
+            }
         }
+        println("You moved ${direction.directionname}")
         player.move(dungeon,direction)
     }
 
     private fun foundenemy(newPosition: Position) {
         val currentEnemy = dungeon.trueBoard[newPosition.X][newPosition.Y] as Enemy
         currentEnemy.discoveredenemymsg()
-
         if (player.spellissuccesful()) {
             if (currentEnemy is Dementor) {
                 println("Harry used expecto patronum!!, he´s safe for now...")
@@ -95,11 +88,21 @@ class Controller (
             }
         } else {
             println("Harry´s spell failed...")
+            dealwiththefailure(currentEnemy)
+            if (!player.isalive) gameover()
+        }
+    }
+
+    private fun dealwiththefailure(currentEnemy: Enemy) {
+        if (currentEnemy is Dementor) {
+            player.health.takedmg(currentEnemy)
+            println("HP: ${player.health.gethealthvalue()}")
+        } else {
             if (currentEnemy.canattack()) {
                 player.health.takedmg(currentEnemy)
-                if (currentEnemy is StrongEnemy) currentEnemy.move(dungeon)
-            }
-            if (!player.isalive) gameover()
+                println("HP: ${player.health.gethealthvalue()}")
+                (currentEnemy as StrongEnemy).move(dungeon)
+            } else println("They didn´t attack! he´s safe for now...")
         }
     }
 
@@ -107,11 +110,14 @@ class Controller (
         val currentally = dungeon.trueBoard[newPosition.X][newPosition.Y] as Ally
         currentally.discoveredallymsg()
         if (currentally is Ron) {
-            if (currentally.failstoheal()) player.health.takedmg(currentally)
+            if (currentally.failstoheal()){
+                player.health.takedmg(currentally)
+            }else player.health.heal(currentally)
             if (!player.isalive) gameover()
         } else {
             player.health.heal(currentally)
         }
+        println("HP: ${player.health.gethealthvalue()}")
         alliesfound++
     }
 
@@ -157,7 +163,6 @@ class Controller (
                     input == "E" ||
                     input == "W" )
                 )
-
     }
 
     fun winningconditionsaremet(): Boolean {

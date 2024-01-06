@@ -1,9 +1,14 @@
 package org.example.entities.enemies
 
 import org.example.entities.allies.Ally
-import org.example.objects.Entity
+import org.example.entities.Entity
 
 class Health (var value : Int) {
+
+    fun gethealthvalue() : Int{
+        if (value < 0) return 0
+        return value
+    }
     fun takedmg(attacker : Entity){
         if (attacker is Enemy){
             value -= attacker.attack

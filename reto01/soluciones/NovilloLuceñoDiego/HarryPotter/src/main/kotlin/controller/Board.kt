@@ -8,7 +8,7 @@ import org.example.entities.allies.Ron
 import org.example.entities.enemies.Dementor
 import org.example.entities.enemies.strongenemies.Bellatrix
 import org.example.entities.enemies.strongenemies.Voldemort
-import org.example.objects.Entity
+import org.example.entities.Entity
 
 const val WIDTH = 6
 const val HEIGHT = 6
@@ -18,6 +18,10 @@ const val DEMENTORSAMOUNT = 6
 class Board {
     var gameBoard : Array<Array<Boolean>> = Array(HEIGHT) { Array(WIDTH) { false } }
     var trueBoard : Array<Array<Entity?>> = Array(HEIGHT) { Array(WIDTH) { null } }
+
+    /**
+     * @param player es el jugador
+     */
 
     fun positionEntities(player: Player){
         trueBoard[0][0] = player
@@ -67,27 +71,31 @@ class Board {
     fun showmap() {
         for (i in gameBoard.indices){
             for (j in gameBoard[0].indices){
+                val currentspot = trueBoard[i][j]
                 if (gameBoard[i][j]){
-                    if (trueBoard[i][j] is Entity) {
-                        val currentspot = trueBoard[i][j]
-                        when (currentspot) {
-                            is Dementor -> print("\uD83D\uDC7B")
-                            is Player -> print("\uD83E\uDDD9")
-                            is Voldemort -> print("\uD83E\uDDDB\uD83C\uDFFB\u200D♂\uFE0F")
-                            is Bellatrix -> print("\uD83D\uDC69\uD83C\uDFFB\u200D\uD83C\uDFA4")
-                            is Herminone -> print("\uD83E\uDDD9\uD83C\uDFFD\u200D♀\uFE0F")
-                            is McGonagall -> print("\uD83E\uDDD9\uD83C\uDFFC\u200D♀\uFE0FF")
-                            is Ron -> print("\uD83E\uDDD9\uD83C\uDFFC")
-                            is Horrocrux -> print("✨")
-                        }
-                    }else{
-                        print("\uD83D\uDFEB")
-                    }
+                    printwhateverwasfoundhere(i, j, currentspot)
                 }else{
                     print("⚫")
                 }
             }
             println()
+        }
+    }
+
+    private fun printwhateverwasfoundhere(i: Int, j: Int, currentspot: Entity?) {
+        if (trueBoard[i][j] is Entity) {
+            when (currentspot) {
+                is Dementor -> print("\uD83D\uDC7B")
+                is Player -> print("\uD83E\uDDD9")
+                is Voldemort -> print("\uD83E\uDDDB\uD83C\uDFFB\u200D♂\uFE0F")
+                is Bellatrix -> print("\uD83D\uDC69\uD83C\uDFFB\u200D\uD83C\uDFA4")
+                is Herminone -> print("\uD83E\uDDD9\uD83C\uDFFD\u200D♀\uFE0F")
+                is McGonagall -> print("\uD83E\uDDD9\uD83C\uDFFC\u200D♀\uFE0F")
+                is Ron -> print("\uD83E\uDDD9\uD83C\uDFFC")
+                is Horrocrux -> print("✨")
+            }
+        } else {
+            print("\uD83D\uDFEB")
         }
     }
 }
