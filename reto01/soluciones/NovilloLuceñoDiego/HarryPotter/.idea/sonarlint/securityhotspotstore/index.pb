@@ -37,3 +37,5 @@ k
 ;src/main/kotlin/entities/enemies/strongenemies/Voldemort.kt,e\4\e4e2ece3f7d53040d718f4b5ac979b7d64f2694a
 @
 build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+R
+"src/main/kotlin/entities/Health.kt,e\e\eebb7e2403607be76496463163023459109f3982

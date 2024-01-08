@@ -8,6 +8,7 @@ class Ron(position: Position) : Ally(position) {
     override val healingpower: Int = 20
     override val name = "Ron"
 
+
     override fun discoveredallymsg() {
         println("Harry found Ron in the dungeon!")
     }

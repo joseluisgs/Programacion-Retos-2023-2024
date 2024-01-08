@@ -3,7 +3,7 @@ package entities
 import org.example.controller.Board
 import org.example.controller.Direction
 import org.example.controller.Position
-import org.example.entities.enemies.Health
+import org.example.entities.Health
 import org.example.entities.Entity
 
 const val STARTINGHEALTH = 100

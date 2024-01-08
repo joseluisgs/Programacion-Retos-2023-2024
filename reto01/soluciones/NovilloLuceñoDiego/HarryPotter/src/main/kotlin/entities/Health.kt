@@ -1,7 +1,7 @@
-package org.example.entities.enemies
+package org.example.entities
 
 import org.example.entities.allies.Ally
-import org.example.entities.Entity
+import org.example.entities.enemies.Enemy
 
 class Health (var value : Int) {
 
