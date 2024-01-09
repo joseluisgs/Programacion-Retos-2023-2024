@@ -100,37 +100,33 @@ class Controller (
             if (currentEnemy is Dementor) {
                 println("Harry used expecto patronum!!, he´s safe for now...")
             }else {
-                if (currentEnemy is StrongEnemy){
-                    println("Harry was able to beat ${currentEnemy.name}!, for now...")
-                    currentEnemy.move(dungeon)
-                }
+                println("Harry was able to beat ${currentEnemy.name}!, for now...")
+                (currentEnemy as StrongEnemy).move(dungeon)
             }
+            duelswon++
         } else {
             println("Harry´s spell failed...")
-            dealwiththefailure(currentEnemy)
+            if (currentEnemy.canattack()){
+                dealwiththefailure(currentEnemy)
+            }else{
+                println("They didn´t attack! he´s safe for now...")
+                if(currentEnemy is StrongEnemy) currentEnemy.move(dungeon)
+            }
+            duelslost++
             if (!player.isalive) gameover()
+
         }
     }
 
     /**
      * Sale de la funcion anterior, lo saqué para que se puede leer mas facilmente,
-     * si el enemigo le hace daño se imprime su HP y mueve al enemigo
+     * si el enemigo le hace daño se imprime su HP y mueve al enemigo si es un enemigo fuerte
      * @param currentEnemy es el enemigo actual, lo necesito para moverle y para mandarlo a la funcion (takedmg())
      */
     private fun dealwiththefailure(currentEnemy: Enemy) {
-        if (currentEnemy is Dementor) {
-            player.health.takedmg(currentEnemy)
-            println("HP: ${player.health.gethealthvalue()}")
-        } else {
-            if (currentEnemy.canattack()) {
-                player.health.takedmg(currentEnemy)
-                println("HP: ${player.health.gethealthvalue()}")
-                (currentEnemy as StrongEnemy).move(dungeon)
-            } else{
-                println("They didn´t attack! he´s safe for now...")
-                (currentEnemy as StrongEnemy).move(dungeon)
-            }
-        }
+        player.health.takedmg(currentEnemy)
+        if (currentEnemy is StrongEnemy) currentEnemy.move(dungeon)
+        println("HP: ${player.health.gethealthvalue()}")
     }
 
     /**
@@ -157,7 +153,7 @@ class Controller (
     }
 
     /**
-     * Si pierde todo el HP se acaba el juego
+     * Si su HP llega a 0 se acaba el juego
      */
     private fun gameover() {
         println("Harry died in the dungeons...Lord Voldermort wins")
