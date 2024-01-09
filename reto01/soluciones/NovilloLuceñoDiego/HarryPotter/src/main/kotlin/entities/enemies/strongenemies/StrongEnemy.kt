@@ -5,6 +5,10 @@ import org.example.controller.Position
 import org.example.entities.enemies.Enemy
 
 abstract class StrongEnemy(position: Position) : Enemy(position){
+
+    /**
+     * Mueve el enemigo a una nueva posicion que está libre, no sale del while hasta que lo ha movido
+     */
     fun move(dungeon : Board){
         var hasmoved = false
         while (!hasmoved){

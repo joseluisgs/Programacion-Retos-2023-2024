@@ -20,7 +20,8 @@ class Board {
     var trueBoard : Array<Array<Entity?>> = Array(HEIGHT) { Array(WIDTH) { null } }
 
     /**
-     * @param player es el jugador
+     * Posiciona a todos los elementos que son parte del juego
+     * @param player es Harry
      */
 
     fun positionEntities(player: Player){
@@ -50,6 +51,9 @@ class Board {
         trueBoard[freePosition.X][freePosition.Y] = McGonagall(freePosition)
     }
 
+    /**
+     * @return una  posicion random que es nula
+     */
     private fun getafreeposition() : Position{
         var done = false
         var freePosition = Position(0,0)
@@ -64,10 +68,16 @@ class Board {
         return freePosition
     }
 
+    /**
+     * Cambia el estado de la matriz para enseñar lo que se encuentra ahi cuando se imrpima el mapa
+     */
     fun unlocknewposition(position: Position){
         gameBoard[position.X][position.Y] = true
     }
 
+    /**
+     * Imprime la matriz
+     */
     fun showmap() {
         for (i in gameBoard.indices){
             for (j in gameBoard[0].indices){
@@ -82,6 +92,9 @@ class Board {
         }
     }
 
+    /**
+     * Imprime el elemento que se encuentra, si esa posicion no ha sido descubierta, imprime un circulo negro
+     */
     private fun printwhateverwasfoundhere(i: Int, j: Int, currentspot: Entity?) {
         if (trueBoard[i][j] is Entity) {
             when (currentspot) {
