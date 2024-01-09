@@ -19,7 +19,6 @@ fun playagain(input : String): Boolean {
     if (editableinput == "Y"){
         result = true
     }
-
     return result
 }
 
