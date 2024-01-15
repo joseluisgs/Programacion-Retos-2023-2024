@@ -1,4 +1,0 @@
-package models
-
-class Ron {
-}
