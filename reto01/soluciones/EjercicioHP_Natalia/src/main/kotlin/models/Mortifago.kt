@@ -1,8 +1,18 @@
 package org.example.models
 
+
+/**
+ * Clase del enemigo comun
+ * @param dmg cantidad de daño que inflingen al acertar un ataque.
+ * @param muertos recuento de enemigos muertos hasta el momento
+ * @see Enemigo
+ * @see Ministerio
+ * @author Javier Ruiz
+ * @since 1.0.0
+ */
 class Mortifago: Enemigo() {
 
-    var hp=10
+
     var dmg=10
     var muertos=0
      override fun atacar(): Boolean{

@@ -2,6 +2,31 @@ package org.example.models
 
 const val MAX_MORTIFAGOS=6
 const val MAX_HORROCRUXES=7
+
+/**
+ * @property ministerio es la matriz sobre la que ocurriran las acciones
+ * @property mortifago referencia a la clase Mortifago
+ * @see Mortifago
+ * @property potter referencia a la clase Harry
+ * @see Harry
+ * @property voldemort referencia  a la clase Voldemort
+ * @see Voldemort
+ * @property bellatrix referencia a la clase Bellatrix
+ * @see Bellatrix
+ * @property horrocrux referencia a la clase Horrocrux
+ * @see Horrocrux
+ * @property mcGonagall referencia a la clase McGonagall
+ * @see McGonagall
+ * @property ronald referencia a la clase Ronald
+ * @see Ronald
+ * @property hermaioni referencia a la clase Hermaioni
+ * @see Hermaioni
+ * @property casilla referencia a la clase Casilla
+ * @see Casilla
+ * @property ministerioBuffer es la matriz sobre la que se realizara la impresion.
+ * @author Javier Ruiz
+ * @since 1.0.0
+ */
 class Ministerio {
     private var ministerio: Array<Array<Casilla?>> = Array(6){Array (6) {null}}
     private val mortifago=Mortifago()
@@ -14,6 +39,12 @@ class Ministerio {
     private val hermaioni=Hermaioni()
     private val casilla=Casilla()
     private var ministerioBuffer: Array<Array<Casilla?>> = Array(6){Array (6) {casilla}}
+
+    /**
+     * Es la funcion que usaremos para colocar a Potter en la matriz
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun placePotter(){
     ministerio[0][0]=potter
     ministerioBuffer[0][0]=potter
@@ -46,6 +77,13 @@ class Ministerio {
         }while(cont<1)
     }*/
 
+
+    /**
+     * Es la funcion con la que colocaremos los personajes principales en la matriz.
+     * @param list es un array de personajes para la inclusion en la matriz
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun placeRandom(){
         val list: Array<Personaje?> = Array (5) {null}
         list[0] = voldemort
@@ -70,6 +108,11 @@ class Ministerio {
     }
 
 
+    /**
+     * Es la funcion que usaremos para colocar los horrocruxes
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun placeHorrocrux(){
         var cont=0
         var filaRandom: Int
@@ -85,6 +128,11 @@ class Ministerio {
     }
 
 
+    /**
+     * Es la funcion con la que inicializaremos la matriz
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun initMinisterio(){
         var cont=0
         var filaRandom: Int
@@ -106,6 +154,11 @@ class Ministerio {
     }
 
 
+    /**
+     * Es la funcion que movera aleatoriamente a Bellatrix y Voldemort
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun randomMovement(enemigo: Enemigo){
         var randomFila: Int
         var randomColumna: Int
@@ -120,11 +173,15 @@ class Ministerio {
     }
 
 
-
+    /**
+     * Es la funcion que realizara el movimiento dirigido de potter.
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun moverPotter(){
         println("Hacia que direccion nos debemos mover Harry")
         val posicion = potter.posicion
-       printMinisterio(posicion[0], posicion[1])
+       printMinisterio()
         var exit=true
         do {
                  println(
@@ -160,6 +217,11 @@ class Ministerio {
     }
 
 
+    /**
+     * Es la funcion que realizara las interacciones entre personajes
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun interacciones(fila: Int, columna: Int){
         var acierto: Boolean
         when(ministerio[fila][columna]){
@@ -253,6 +315,12 @@ class Ministerio {
             ministerioBuffer[fila][columna]=potter}
         }
     }
+
+    /**
+     * Es la funcion que realizara la comprobacion de que seguimos dentro de la matriz.
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun limitTestin(posicion: Array<Int>, direccion: String): Boolean {
         if (posicion[0] == 0 && direccion == "W"
             ||
@@ -269,6 +337,12 @@ class Ministerio {
         }
     }
 
+
+    /**
+     * Funcion auxiliar para cuando los aliados no curan
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     fun mantenerSitio(fila: Int, columna: Int, personaje: Personaje) {
         ministerio[fila][columna]=personaje
         ministerioBuffer[fila][columna]=personaje
@@ -276,6 +350,12 @@ class Ministerio {
 
     }
 
+
+    /**
+     * Funcion que nos da el resumen de puntos de vida, horrocruxes destruidos y mortifagos muertos
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun informe(){
         if(potter.lifePoints<0) potter.lifePoints=0
         println("Resumen de la aventura:" +
@@ -285,7 +365,11 @@ class Ministerio {
     }
 
 
-
+    /**
+     * Funcion principal donde se realiza el programa.
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     fun accioPartida(){
         println("Bienvenido Potter al Ministerio de Magia")
 
@@ -314,24 +398,27 @@ class Ministerio {
     }
 
 
-
-
-
-    private fun printMinisterio(fila: Int, columna: Int) {
+    /**
+     * Funcion que imprime el ministerio en oculto.
+     * @author Javier Ruiz
+     * @since 1.0.0
+     *
+     */
+    private fun printMinisterio() {
 
         for (i in ministerioBuffer.indices) {
             for (j in ministerioBuffer[i].indices) {
 
 
                 when (ministerioBuffer[i][j]) {
-                    mortifago -> print("[\uD83D\uDC0D]")
-                    potter -> print("[\uD83C\uDF29]")
-                    voldemort -> print("[\uD83D\uDC43]")
-                    bellatrix -> print("[\uD83D\uDDE1]")
-                    horrocrux -> print("[\uD83D\uDC8E]")
-                    mcGonagall -> print("[\uD83D\uDC31\u200D\uD83D\uDC64]")
-                    hermaioni -> print("[\uD83E\uDDE0]")
-                    ronald -> print("[\uD83E\uDD55]")
+                    mortifago -> print("[🐍]")
+                    potter -> print("[👓]")
+                    voldemort -> print("[👃]")
+                    bellatrix -> print("[🗡️]")
+                    horrocrux -> print("[💎]")
+                    mcGonagall -> print("[🐈]")
+                    hermaioni -> print("[🧠]")
+                    ronald -> print("[🥕]")
                     casilla -> print("[??]")
                     else -> print("[  ]")
                 }
@@ -342,32 +429,23 @@ class Ministerio {
 
     }
 
-        fun copyMinisterio(origen: Array<Array<Casilla?>>, destino: Array<Array<Casilla?>>) {
-            for(i in origen.indices){
-                for(j in origen[i].indices){
-                    destino[i][j] = origen[i][j]
-                }
-            }
-
-        }
-
-
-
-
-
-
+    /**
+     * Funcion que imprime el ministerio en vista por si hay que comprobar o es el final de la partida.
+     * @author Javier Ruiz
+     * @since 1.0.0
+     */
     private fun imprimirMinisterio(){
         for (i in ministerio.indices) {
             for (j in ministerio[i].indices) {
                 when (ministerio[i][j]) {
-                    mortifago -> print("[\uD83D\uDC0D]")
-                    potter -> print("[\uD83C\uDF29]")
-                    voldemort -> print("[\uD83D\uDC43]")
-                    bellatrix -> print("[\uD83D\uDDE1]")
-                    horrocrux -> print("[\uD83D\uDC8E]")
-                    mcGonagall -> print("[\uD83D\uDC31\u200D\uD83D\uDC64]")
-                    hermaioni -> print("[\uD83E\uDDE0]")
-                    ronald -> print("[\uD83E\uDD55]")
+                    mortifago -> print("[🐍]")
+                    potter -> print("[👓]")
+                    voldemort -> print("[👃]")
+                    bellatrix -> print("[🗡️]")
+                    horrocrux -> print("[💎]")
+                    mcGonagall -> print("[🐈]")
+                    hermaioni -> print("[🧠]")
+                    ronald -> print("[🥕]")
                     else -> print("[  ]")
                 }
             }
