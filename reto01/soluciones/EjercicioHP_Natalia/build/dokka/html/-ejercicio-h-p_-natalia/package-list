@@ -1,0 +1,57 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:org.example.models////PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/index.html
+$dokka.location:org.example.models//MAX_HORROCRUXES/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-m-a-x_-h-o-r-r-o-c-r-u-x-e-s.html
+$dokka.location:org.example.models//MAX_MORTIFAGOS/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-m-a-x_-m-o-r-t-i-f-a-g-o-s.html
+$dokka.location:org.example.models/Aliado///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-aliado/index.html
+$dokka.location:org.example.models/Aliado/Aliado/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-aliado/-aliado.html
+$dokka.location:org.example.models/Bellatrix///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-bellatrix/index.html
+$dokka.location:org.example.models/Bellatrix/Bellatrix/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-bellatrix/-bellatrix.html
+$dokka.location:org.example.models/Bellatrix/atacar/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-bellatrix/atacar.html
+$dokka.location:org.example.models/Bellatrix/dmg/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-bellatrix/dmg.html
+$dokka.location:org.example.models/Casilla///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-casilla/index.html
+$dokka.location:org.example.models/Casilla/Casilla/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-casilla/-casilla.html
+$dokka.location:org.example.models/Enemigo///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-enemigo/index.html
+$dokka.location:org.example.models/Enemigo/Enemigo/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-enemigo/-enemigo.html
+$dokka.location:org.example.models/Enemigo/atacar/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-enemigo/atacar.html
+$dokka.location:org.example.models/Harry///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-harry/index.html
+$dokka.location:org.example.models/Harry/Harry/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-harry/-harry.html
+$dokka.location:org.example.models/Harry/atacar/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-harry/atacar.html
+$dokka.location:org.example.models/Harry/lifePoints/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-harry/life-points.html
+$dokka.location:org.example.models/Harry/posicion/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-harry/posicion.html
+$dokka.location:org.example.models/Hermaioni///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-hermaioni/index.html
+$dokka.location:org.example.models/Hermaioni/Hermaioni/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-hermaioni/-hermaioni.html
+$dokka.location:org.example.models/Hermaioni/heal/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-hermaioni/heal.html
+$dokka.location:org.example.models/Horrocrux///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-horrocrux/index.html
+$dokka.location:org.example.models/Horrocrux/Horrocrux/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-horrocrux/-horrocrux.html
+$dokka.location:org.example.models/Horrocrux/destruidos/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-horrocrux/destruidos.html
+$dokka.location:org.example.models/Horrocrux/destruirHorrocruxes/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-horrocrux/destruir-horrocruxes.html
+$dokka.location:org.example.models/Horrocrux/toString/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-horrocrux/to-string.html
+$dokka.location:org.example.models/McGonagall///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-mc-gonagall/index.html
+$dokka.location:org.example.models/McGonagall/McGonagall/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-mc-gonagall/-mc-gonagall.html
+$dokka.location:org.example.models/McGonagall/heal/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-mc-gonagall/heal.html
+$dokka.location:org.example.models/Ministerio///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ministerio/index.html
+$dokka.location:org.example.models/Ministerio/Ministerio/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ministerio/-ministerio.html
+$dokka.location:org.example.models/Ministerio/accioPartida/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ministerio/accio-partida.html
+$dokka.location:org.example.models/Ministerio/mantenerSitio/#kotlin.Int#kotlin.Int#org.example.models.Personaje/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ministerio/mantener-sitio.html
+$dokka.location:org.example.models/Mortifago///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-mortifago/index.html
+$dokka.location:org.example.models/Mortifago/Mortifago/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-mortifago/-mortifago.html
+$dokka.location:org.example.models/Mortifago/atacar/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-mortifago/atacar.html
+$dokka.location:org.example.models/Mortifago/dmg/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-mortifago/dmg.html
+$dokka.location:org.example.models/Mortifago/muertos/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-mortifago/muertos.html
+$dokka.location:org.example.models/Personaje///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-personaje/index.html
+$dokka.location:org.example.models/Personaje/Personaje/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-personaje/-personaje.html
+$dokka.location:org.example.models/Ronald///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ronald/index.html
+$dokka.location:org.example.models/Ronald/Ronald/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ronald/-ronald.html
+$dokka.location:org.example.models/Ronald/dmg/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ronald/dmg.html
+$dokka.location:org.example.models/Ronald/heal/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ronald/heal.html
+$dokka.location:org.example.models/Ronald/liarla/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-ronald/liarla.html
+$dokka.location:org.example.models/Voldemort///PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-voldemort/index.html
+$dokka.location:org.example.models/Voldemort/Voldemort/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-voldemort/-voldemort.html
+$dokka.location:org.example.models/Voldemort/atacar/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-voldemort/atacar.html
+$dokka.location:org.example.models/Voldemort/dmg/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example.models/-voldemort/dmg.html
+$dokka.location:org.example////PointingToDeclaration/-ejercicio-h-p_-natalia/org.example/index.html
+$dokka.location:org.example//main/#/PointingToDeclaration/-ejercicio-h-p_-natalia/org.example/main.html
+org.example
+org.example.models
+

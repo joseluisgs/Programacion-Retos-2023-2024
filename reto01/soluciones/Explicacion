@@ -1,0 +1,18 @@
+Para resolver este ejercicio lo primero que decidi crear fueron las clases, una clase Personaje abstracta de la cual heredarian dos 
+subclases que serian enemigo y aliado, cada una de estas con la funcion de atacar y curar respecticvamente, de las cuales heredarian
+cada uno de los personajes propiamente dicho, luego creariamos a Harry y los horrocruxes que heredarian directamente de personaje,
+una vez tenemos todo esto creado procedemos con la creacion de la logica, comenzamos con la creacion de la matriz del tipo Personaje?,
+pasamos a posicionar en primer lugar a Harry que siempre iniciara en la 0,0, posteriormente colocaremos los horrocruxes con una funcion
+de posicionamiento aleatorio para posteriormente y desde un array colocar los personajes principales dejando para el final la colocacion
+de los mortifagos.
+
+Una vez tenemos la matriz inicializada procedemos a crear la funcion para imprimirla y asegurarnos de que todo esta correcto,
+seguido de la funcion de mover a potter y la funcion de limit testin para que no nos salgamos de la matriz que tambien comprobaremos 
+con la funcion de imprimir matriz y un bucle controlado, luego creamos la funcion de interacciones de tal manera que cuando potter 
+se mueva interactue con los objetos de la matriz, a continuacion se implementa la funcion de randomMovement() para mover aleatoriamente 
+a Voldemort y Bellatrix despues de encontrarnos con ellos.
+
+Dejamos para el final la ocultacion de la matriz para la cual crearemos una nueva superclase de la que todos heredaran y que cambiara
+el tipo de la matriz llamada Casilla() para poder ocultar las casillas que no sean potter hasta que pasemos por ellas, junto a esto 
+creamos un segundo tablero para poder tener la vista y la oculta para realizar las comprobaciones necesarias para asegurarnos del buen
+funcionamiento del programa.
