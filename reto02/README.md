@@ -3,7 +3,7 @@
 
 ![](https://pixellogo.com/cdn/shop/products/F1-logo_1024x1024@2x.png?v=1574506191)
 
-Sean bienvenidos al primer gran premio de DAW, un concepto totalmente nuevo en el automovilismo. Para este gran premmio contamos con un circuito de 8x10 en el cual ganará el primer piloto en completar 3 vueltas. 
+Sean bienvenidos al primer gran premio de DAW, un concepto totalmente nuevo en el automovilismo. Para este gran premmio contamos con un circuito de 8x10 kilometros de longitud en el cual ganará el primer piloto en completar 3 vueltas. 
 
 Los participantes de este gran premio serán 4 equipos de la formula 1 con sus respectivos pilotos. RedBull contará con Max Verstappen y Checo Pérez, Aston Martin con Fernando Alonso y Lance Stroll, Mercedes con Hamilton y Russel y finalmente, Ferrai con Sainz y LeClerc.
 
