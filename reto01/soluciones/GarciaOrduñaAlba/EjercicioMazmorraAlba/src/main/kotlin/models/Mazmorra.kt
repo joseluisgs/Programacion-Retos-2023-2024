@@ -55,6 +55,7 @@ class Mazmorra {
         harry.posicion[1] = nuevaColumna
 
         accionPersonajes(nuevaFila, nuevaColumna)
+
         mazmorra[nuevaFila][nuevaColumna] = harry
         mazmorra[filaActual][columnaActual] = null
         comprobarCelda(filaActual, columnaActual)
@@ -136,7 +137,7 @@ class Mazmorra {
             usuarioDireccion = readln().toUpperCase()
         }while (usuarioDireccion!= "W" && usuarioDireccion!= "A" && usuarioDireccion!= "S" && usuarioDireccion!= "D")
 
-        if (usuarioDireccion != null && comprobarLimites(harry.obtenerFila(), harry.obtenerColumna())) {
+        if (usuarioDireccion != null && comprobarLimites(harry.obtenerFila(),harry.obtenerColumna())) {
             mover(usuarioDireccion)
         } else {
             println("No se puede mover")

@@ -3,8 +3,6 @@ R
 "src/main/kotlin/models/Mazmorra.kt,c\e\cef99439f2880c3f0ccad2bd38bc81fb3139299e
 G
 src/main/kotlin/Main.kt,d\8\d83ae3847b7d408136086cc5e9e95f5f7c126ed5
-V
-&src/main/kotlin/models/Protagonista.kt,1\e\1eee2b600e1cb91f6ae0c72247ffaa0bc2dc7a97
 R
 "src/main/kotlin/models/Hermione.kt,a\a\aa8fea7f4ac36ba93e3d7d19e40c385b6d655037
 R
@@ -24,13 +22,9 @@ R
 Q
 !src/main/kotlin/models/Aliados.kt,6\1\616f2ea5d6331ed3afe2d75386c62a2d31e4c148
 S
-#src/main/kotlin/models/Direccion.kt,9\5\95d4f0d8db96bd5cab154e863327f604c3b61038
-S
 #src/main/kotlin/models/Voldemort.kt,8\6\86c02d591b8ff378e7b62ae9c7f6b12683724906
 O
 src/main/kotlin/models/Harry.kt,7\d\7d059f62283a99770d0f587dc75e98fdfab27d0f
-R
-"src/main/kotlin/models/Posicion.kt,2\9\29c9637699b5cf0bb5c945a0207caa6ab3d6e882
 @
 build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
 A
