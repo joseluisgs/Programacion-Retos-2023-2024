@@ -1,0 +1,16 @@
+# GP de DAW
+## Javier Hernández
+
+![](https://pixellogo.com/cdn/shop/products/F1-logo_1024x1024@2x.png?v=1574506191)
+
+Sean bienvenidos al primer gran premio de DAW, un concepto totalmente nuevo en el automovilismo. Para este gran premmio contamos con un circuito de 8x10 kilometros de longitud en el cual ganará el primer piloto en completar 3 vueltas. 
+
+Los participantes de este gran premio serán 4 equipos de la formula 1 con sus respectivos pilotos. RedBull contará con Max Verstappen y Checo Pérez, Aston Martin con Fernando Alonso y Lance Stroll, Mercedes con Hamilton y Russel y finalmente, Ferrai con Sainz y LeClerc.
+
+Como en todas las carreras puede haber accidentes y estos suponen un DNF (do not finish) para el piloto que sufre el accidente, haciendo que este no pueda continuar la carrera. Los accidentes dependerán de la probabilidad de sufir un accidente de cada piloto, basandose en su habilidad, las probabilidades de sufrir un accidente son: Max(5%), Checo(10%), Alonso(5%), Stroll(20%), Hamilton(10%), Russel(15%), Sainz(10%) y LeClerc(20%).
+
+Los pilotos se colocaran en una misma columna de forma que todos comienzan a la misma altura. Estos se moveran por sus respectivos carriles como si de una carrera de atletismo se tratara. Los pilotos avanzan 1 posición cada 1 segundo. Al llegar a la posición 5 deberán realizar un PitStop para cambiar los neumáticos, y esto supondrá una parada de entre 1 y 3 segundos aleatoriamente. Cada 6 segundos los ingenieros de pista comprobarán la meteorología ya que hay un 35% de posibilidades de que llueva. En caso de lluvia los pilotos deberán realizar un PitStop (entre 1 y 3 segundos) para cambiar los neumáticos de seco a los de lluvia.
+
+Debido a la experiencia de los pilotos y al desarrollo del monoplaza, cada equipo puede verse beneficiado o perjudicado. En el caso de RedBull (Max y Checo), pueden realizar una vuelta rápida con un 10% de probabilidad haciendo que el piloto que realiza esa vuelta rápida avanze 2 posiciones. Aston Martin (Alonso y Stroll) tiene un 15% de probabilidad de cometer una mala estrategia durante la carrera, haciendo que uno de sus pilotos aleatoriamente deba detenerse 2 segundos. Mercedes (Hamilton y Russel) tienen un 20% de probabilidad de cometer un error y hacer que salga el safety car, haciendo que el piloto que ha cometido el error retroceda una posición. Por último, Ferrari (Sainz, LeClerc) podrá sufrir de igual forma que Aston Martin una mala estrategia además de problemas de fiabilidad. Los problemas de fiabilidad tienen un 25% de probabilidad de aparecer dejando aleatoriamente a uno de los dos pilotos fuera de la carrera (DNF).
+
+Al terminar la carrera se deberá mostrar el podio en base al tiempo que han tardado en completar la carrera.
