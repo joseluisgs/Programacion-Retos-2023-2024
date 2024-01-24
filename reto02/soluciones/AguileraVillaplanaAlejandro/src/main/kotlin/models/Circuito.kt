@@ -10,9 +10,7 @@ class Circuito (
 ) {
     private val pista = Array(pistasizelargo){ arrayOfNulls<Piloto>(pistasizeancho)}
     private val pilotos=Array(totalcorredores){
-        when(){
 
-        }
     }
 
 
@@ -24,23 +22,20 @@ class Circuito (
                 }
             }
         }
-        val pilotosaAlmacenar = min(pistasizeancho * pistasizelargo, pilotosRestantes)
+        val pilotosaAlmacenar = (pistasizeancho * pistasizelargo)
         val pilotosAlmacenados=0
         val pilotosIndexados=0
-        while (pilotosAlmacenados<pilotosaAlmacenar){
-            while(pilotosIndexados<piloto.size)
-        }
+
     }
 
     fun comenzarCarrera() {
         var tiempo = 1
         var vuelta=1
         colocarPilotos()
-        imprimirPista()
         do{
             println("Tiempo: $tiempo")
             println("Vuelta: $vuelta")
-
+            imprimirPista()
             if (tiempo%5==0){
                 println("PIT STOP!!")
             }
