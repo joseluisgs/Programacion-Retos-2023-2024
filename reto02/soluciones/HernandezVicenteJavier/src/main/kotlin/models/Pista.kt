@@ -22,7 +22,7 @@ class Pista (val numPilotos: Int = 8, private val distancia: Int = 10) {
     init {
         println("Bienvenidos al Gran premio de DAW")
         println("Si parpadean se lo pierden señores")
-        println("🔴🔴🔴🔴🟢🟢🟢🟢")
+        printSemafor()
         inicializarPista(pista)
         printPista(pista)
     }
@@ -50,6 +50,10 @@ class Pista (val numPilotos: Int = 8, private val distancia: Int = 10) {
         finCrono()
         podio()
     }
+
+    /**
+     * Ordena la parrilla de pilotos de menos a más en base a su tiempo de carrera
+     */
     private fun podio(){
         for (i in 0 until parrilla.size) {
             for (j in 0 until parrilla.size - i - 1) {
@@ -255,5 +259,18 @@ class Pista (val numPilotos: Int = 8, private val distancia: Int = 10) {
             println()
         }
         println()
+   }
+
+    /**
+     * Imprime el semáforo de salida
+     */
+    private fun printSemafor(){
+        var semaforo = 0
+        do{
+            Thread.sleep(1000)
+            semaforo++
+            println("🔴🔴🔴🔴🔴")
+        }while (semaforo < 4)
+        println("🟢🟢🟢🟢🟢")
     }
 }
