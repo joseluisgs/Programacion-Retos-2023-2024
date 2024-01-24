@@ -1,0 +1,23 @@
+
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+G
+src/main/kotlin/Main.kt,d\8\d83ae3847b7d408136086cc5e9e95f5f7c126ed5
+O
+src/main/kotlin/models/Track.kt,1\9\192cebc915b374184dc5895c17444de507750eb5
+O
+src/main/kotlin/models/Pilot.kt,0\8\08ba203b8e22a8dd240859bf8a9b2e3893af9155
+X
+(src/main/kotlin/models/brands/RedBull.kt,1\6\16ccb9768189aeda3e4ebabcd330f72392a55d8f
+X
+(src/main/kotlin/models/brands/Ferrari.kt,3\3\33b1ec356dcc1f54ab090f07e2e1fdedc3eb1f80
+\
+,src/main/kotlin/models/brands/AstorMartin.kt,1\0\10569bba6afaceb22eb83b7e9eedff91042a4118
+Y
+)src/main/kotlin/models/brands/Mercedes.kt,6\9\69e2e3c790a903110939b0b760b3b3db84ab9871
+O
+src/main/kotlin/models/State.kt,c\f\cf0d41fec537e5364f00ab1ff544746b36e0d02b
+_
+/src/main/kotlin/models/Controller/Controller.kt,4\2\4234a52fec7b691c67215f54e20677c0f1bce941
+_
+/src/main/kotlin/models/controller/Controller.kt,c\b\cb0c0256575e4eb83bbdffc88c5793c7b17c09e9
