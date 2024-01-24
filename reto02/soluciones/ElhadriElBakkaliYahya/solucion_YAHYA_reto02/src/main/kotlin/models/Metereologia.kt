@@ -10,4 +10,5 @@ interface Metereologia {
         return false
     }
 
+
 }
