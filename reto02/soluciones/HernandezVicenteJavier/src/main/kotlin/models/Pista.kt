@@ -48,36 +48,35 @@ class Pista (val numPilotos: Int = 8, private val distancia: Int = 10) {
         }while (!finCarrera())
         println("La carrera ha acabado 🏁🏁🏁")
         finCrono()
-        podio(parrilla)
+        podio()
     }
-    private fun podio(arrayPilotos: Array<Pilotos>) {
-        var aux: Long
-        for (i in 0 until arrayPilotos.size) {
-            for (j in 0 until arrayPilotos.size - i - 1) {
-                if (arrayPilotos[j].tiempoCarrera < (arrayPilotos[j + 1].tiempoCarrera) ) {
-                     aux = arrayPilotos[j].tiempoCarrera
-                    arrayPilotos[j].tiempoCarrera = arrayPilotos[j + 1].tiempoCarrera
-                    arrayPilotos[j + 1].tiempoCarrera = aux
+    private fun podio(){
+        for (i in 0 until parrilla.size) {
+            for (j in 0 until parrilla.size - i - 1) {
+                if (parrilla[j].tiempoCarrera > (parrilla[j + 1].tiempoCarrera) ) {
+                   var aux = parrilla[j]
+                    parrilla[j] = parrilla[j + 1]
+                    parrilla[j + 1] = aux
                 }
             }
         }
-        printPodio(arrayPilotos)
+        printPodio()
     }
 
     /**
      * Imprime el podio ordenado
      * @param arrayPilotos el array de los pilotos ordenado en función de su tiempo de carrera
      */
-    private fun printPodio(arrayPilotos: Array<Pilotos>) {
+    private fun printPodio() {
         println("Este es el podio del Gran Premio de DAW")
-        for(i in arrayPilotos.indices){
+        for(i in parrilla.indices){
             when(i){
-                0 -> println("🥇 ${arrayPilotos[i].nombre}")
-                1 -> println("🥈 ${arrayPilotos[i].nombre}")
-                2 -> println("🥉 ${arrayPilotos[i].nombre}")
+                0 -> println("🥇 ${parrilla[i].nombre}")
+                1 -> println("🥈 ${parrilla[i].nombre}")
+                2 -> println("🥉 ${parrilla[i].nombre}")
             }
         }
-        if(arrayPilotos[0] is GOAT){ println("Por fin llegó la 33 señores")}
+        if(parrilla[0] is GOAT){ println("Por fin llegó la 33 señores 🏆")}
     }
 
     /**
