@@ -1,0 +1,35 @@
+
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+G
+src/main/kotlin/Main.kt,d\8\d83ae3847b7d408136086cc5e9e95f5f7c126ed5
+Q
+!src/main/kotlin/models/RedBull.kt,1\4\14c615d18b56986bd06a92e6fb46d5e440b73dbd
+Q
+!src/main/kotlin/models/Carrera.kt,6\4\64f3d188c18f1726e474a27ef28847bc7557411c
+U
+%src/main/kotlin/models/AstonMartin.kt,2\f\2f315837a784259b528b90ff85f3323ea491c4b5
+R
+"src/main/kotlin/models/Mercedes.kt,0\8\08411ffab876ac6122af2d027a8d7704c12c1089
+Q
+!src/main/kotlin/models/Ferrari.kt,1\2\121a25e6f0e1b2341874017b2b933632e2041d2b
+W
+'src/main/kotlin/models/MaxVerstappen.kt,5\8\5893d9210f992e0d014c8da594f6895c7191c0e8
+T
+$src/main/kotlin/models/ChecoPerez.kt,3\5\352143ef2cd2dd61084909c21ff5bee077746566
+X
+(src/main/kotlin/models/FernandoAlonso.kt,5\8\580468f367e5ed7519d806cc09bcf591b6b6ec4b
+U
+%src/main/kotlin/models/LanceStroll.kt,e\4\e43c5d5d0e97e65bcf0d7f417e9883647c732397
+O
+src/main/kotlin/models/Sainz.kt,a\a\aa9c15436b922896aeac75c8a1ca702c72618cd9
+Q
+!src/main/kotlin/models/LeClerc.kt,f\b\fb69c3e2568b18e526d27ff88c13e88debbbbfb5
+R
+"src/main/kotlin/models/Hamilton.kt,b\0\b0e91196a8b37b3d1d11f2f666a23c2cf3a17c43
+P
+ src/main/kotlin/models/Russel.kt,5\7\5708bdd129ac7a770e919aaecf4d9abe895b1499
+P
+ src/main/kotlin/models/Piloto.kt,d\e\de6cd4ea374226c7a57e2bffe2e77009e1a0c6e6
+I
+src/main/kotlin/README.md,7\5\75046ffc3397fbf8fcb9e7ffbc5e8ae3bc980d46
