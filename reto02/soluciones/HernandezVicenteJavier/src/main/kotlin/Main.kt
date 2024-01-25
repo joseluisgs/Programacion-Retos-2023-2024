@@ -1,9 +1,7 @@
 package org.example
 
-import org.example.models.Pista
+import org.example.controllers.Pista
 
 fun main() {
-    val pista = Pista()
-    Thread.sleep(2500)
-    pista.carrera()
+    Pista.carrera()
 }
