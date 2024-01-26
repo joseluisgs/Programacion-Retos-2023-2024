@@ -10,7 +10,7 @@ Un par de horas después, cuando se terminan de asentar tus pensamientos, te pon
 
 La base de datos deberá almacenar el nombre (alfanumérico) y alias de cada héroe (alfanumerico), una altura (en cm), edad (numérico) y un apartado para las notas (logitud variable), además de una clave autonumérica. Tenlo en cuenta para el filtrado de la entrada a la hora de validad posibles campos en la base de datos.
 
-Nuestrabase de datos es un array inicialmente de 10 posiciones que crecerá o decrecerá, según se necesite, sabiendo que más de 10 elementos vacíos no es lo deseable.
+Nuestrabase de datos es un array inicialmente de 5 items que crecerá o decrecerá, según se necesite, sabiendo que más de 5 elementos vacíos no es lo deseable.
 
 Crea los dos repositorios para los grupos de héroes pedidos, repitiendo la menor cantidad de código posible.
 
