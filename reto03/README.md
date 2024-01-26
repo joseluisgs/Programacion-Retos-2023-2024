@@ -8,7 +8,7 @@ Cuando te dispones a iniciar sesión en tu ordenador, vuelve a sonar el timbre. 
 
 Un par de horas después, cuando se terminan de asentar tus pensamientos, te pones a hacer un planning de lo que necesitas y te das cuenta de que ambas personas te han pedido lo mismo, y solo varía la discreción que Alfred te ha pedido. Así que decides que el programa que diseñarás será lo más genérico posible para trabajar lo menos posible y que, a la hora de consultarlo, deberá pedirte una contraseña para mayor seguridad. Dadas las necesidades, deberás crear dos clases raíz para cada afiliación y, por lo tanto, dos bases de datos distintas, pero con una sola interfaz deberás ser capaz de acceder a la información de una u otra.
 
-La base de datos deberá almacenar el nombre (alfanumérico) y alias de cada héroe (alfanumerico), una altura (en cm), edad (numérico) y un apartado para las notas (logitud variable), además de una clave autonumérica. Tenlo en cuenta para el filtrado de la entrada a la hora de validad posibles campos en la base de datos.
+La base de datos deberá almacenar el nombre (alfanumérico) y alias de cada héroe (alfanumerico), una altura (en cm), edad (numérico) y un apartado para las notas (logitud variable), además de una clave autonumérica, un campo createdAt que debe almacenar el momento en el que se creó y un updatedAt, campo que almacena el momento donde se actualizó. Tenlo en cuenta para el filtrado de la entrada a la hora de validad posibles campos en la base de datos.
 
 Nuestrabase de datos es un array inicialmente de 5 items que crecerá o decrecerá, según se necesite, sabiendo que más de 5 elementos vacíos no es lo deseable.
 
