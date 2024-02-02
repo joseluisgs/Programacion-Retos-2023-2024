@@ -1,0 +1,21 @@
+
+G
+src/main/kotlin/Main.kt,d\8\d83ae3847b7d408136086cc5e9e95f5f7c126ed5
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+O
+src/main/kotlin/models/Heroe.kt,6\0\609f346ebe59720b6e10c00844849878c421c1b3
+P
+ src/main/kotlin/repository/DC.kt,f\e\fe7ff7500b700d6aff0c531592d9efb728cf38fa
+T
+$src/main/kotlin/repository/Marvel.kt,2\a\2a4bc6ea4f7a2fd8b356ebd259447e2d2a949703
+I
+src/main/kotlin/README.md,7\5\75046ffc3397fbf8fcb9e7ffbc5e8ae3bc980d46
+]
+-src/main/kotlin/validator/UsuarioValidator.kt,d\b\db2200d6ee8db0b8eba3e97bbd7f28114077a32a
+Z
+*src/test/kotlin/validator/ValidatorTest.kt,e\e\eed570f8a84f0b544a95d891a45786ab1905b68c
+X
+(src/test/kotlin/repository/MarvelTest.kt,4\f\4f4db6c414752759226e0c914fe802645e408d04
+T
+$src/test/kotlin/repository/DCTest.kt,d\c\dc40790b75042eb7510006540de3060429d751cd
