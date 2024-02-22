@@ -200,52 +200,35 @@ class `GRAN-PREMIO`:Metereologia {
      * @see comprobarPiloto
      */
     private fun comprobarVueltas() {
-        comprobarPiloto(alonso)
-        comprobarPiloto(checo)
-        comprobarPiloto(hamilton)
-        comprobarPiloto(leclerc)
-        comprobarPiloto(max)
-        comprobarPiloto(russel)
-        comprobarPiloto(sainz)
-        comprobarPiloto(stroll)
+        alonso.comprobarPiloto()
+        checo.comprobarPiloto()
+        hamilton.comprobarPiloto()
+        leclerc.comprobarPiloto()
+        max.comprobarPiloto()
+        russel.comprobarPiloto()
+        sainz.comprobarPiloto()
+        stroll.comprobarPiloto()
     }
 
-    /**
-     * esta funcion comprueba que el piloto hay terminado y nos coloca su tiempo de final para luego poder ordenarlos
-     * @param piloto
-     */
-    private fun comprobarPiloto(piloto: Piloto) {
-        if (piloto.isTerminada && !piloto.tiempoFinalComprobada){
-            piloto.tiempoFinal= LocalTime.now()
-            piloto.tiempoFinalComprobada=true
-            //piloto.tiempoFinal=piloto.tiempoInicio-piloto.tiempoFinal
-            //piloto.timpoFinal-=piloto.tiempoInicio
-        }
-    }
+
+
 
     /**
      * agrupa el conjunto de todos los posicinamientos iniciales
      * @see posicinamientoInicial
      */
     private fun posicionarPilotosInicio() {
-        posicinamientoInicial(max)
-        posicinamientoInicial(alonso)
-        posicinamientoInicial(checo)
-        posicinamientoInicial(hamilton)
-        posicinamientoInicial(leclerc)
-        posicinamientoInicial(russel)
-        posicinamientoInicial(sainz)
-        posicinamientoInicial(stroll)
+        max.posicinamientoInicial(circuito)
+        alonso.posicinamientoInicial(circuito)
+        checo.posicinamientoInicial(circuito)
+        hamilton.posicinamientoInicial(circuito)
+        leclerc.posicinamientoInicial(circuito)
+        russel.posicinamientoInicial(circuito)
+        sainz.posicinamientoInicial(circuito)
+        stroll.posicinamientoInicial(circuito)
     }
 
-    /**
-     * esta funcion nos coloca al piloto en la matriz segun su columna y su fila
-     * @param piloto
-     */
-    private fun posicinamientoInicial(piloto: Piloto){
-        circuito[piloto.fila][piloto.columna]=piloto
-        piloto.tiempoInicio= LocalTime.now()
-    }
+
 
     /**
      * agrupa el conjunto de las acciones segun cada escuderia
@@ -255,11 +238,11 @@ class `GRAN-PREMIO`:Metereologia {
      * @see accionesFerrari
      */
     private fun acciones() {
-        accionesRedBull(max)
-        accionesRedBull(checo)
+        max.accionesRedBull()
+        checo.accionesRedBull()
 
-        accionesAstonMartin(alonso)
-        accionesAstonMartin(stroll)
+        alonso.accionesAstonMartin()
+        stroll.accionesAstonMartin()
 
         accionesMercedes(hamilton)
         accionesMercedes(russel)
@@ -268,72 +251,11 @@ class `GRAN-PREMIO`:Metereologia {
         accionesFerrari(leclerc)
     }
 
-    /**
-     * mientras que el piloto haya terminado la carrera y que la vuelta no sea rapida
-     * hacemos la probabilidad de que sea rapida que es una funcion que es de herencia
-     * @param piloto
-     *
-     */
-    private fun accionesRedBull(piloto: RedBull){
-        if (!acabada(piloto as Piloto) && !piloto.isRapida  ) {
-            piloto.isRapida=piloto.vueltaRapida()
-        }
-    }
 
-    /**
-     * mientras que el piloto haya terminado la carrera y que no este en mala estrategia
-     * hacemos la probabilidad de que sea mala estrategia que es una funcion que es de herencia
-     * @param piloto
-     *
-     */
-    private fun accionesAstonMartin(piloto:AstonMartin){
-        if (!acabada(piloto as Piloto)&& !piloto.isMalaEstrategia){
-            piloto.isMalaEstrategia=piloto.malaEstrategia()
-            if (piloto.isMalaEstrategia){
-                println("${piloto.nombre} A SUFRIDO UNA MALA ESTRATEGIA")
-                piloto.tiempoMalaEstrategia=2
-            }
-        }
-    }
-    /**
-     * mientras que el piloto haya terminado la carrera y que no tenga saftey car
-     * hacemos la probabilidad de que sea sayftey car que es una funcion que es de herencia
-     * @param piloto
-     *
-     */
-    private fun accionesMercedes(piloto: Mercedes){
-        if (!acabada(piloto as Piloto)&& !piloto.isSaftyCar ){
-            piloto.isSaftyCar=piloto.safteyCar()
-            if (piloto.isSaftyCar){
-                println("A ${piloto.nombre} LE SALE EL SAYFTEY CAR")
-                if (piloto.columna==0){
-                    piloto.columna=9
-                    hamilton.vuelta--
-                }
-                else piloto.columna--
-                piloto.isSaftyCar=false
-            }
-        }
-    }
-    /**
-     * mientras que el piloto haya terminado la carrera y que no este en mala estrategia
-     * hacemos la probabilidad de que sea mala estrategia que es una funcion que es de herencia
-     * @param piloto
-     *
-     */
-    private fun accionesFerrari(piloto: Ferrari) {
-        if (!acabada(piloto as Piloto)&&!piloto.isMalaEstrategia ){
-            piloto.isMalaEstrategia=piloto.malaEstrategia()
-            if (piloto.isMalaEstrategia){
-                println("${piloto.nombre} A SUFRIDO UNA MALA ESTRATEGIA")
-                piloto.tiempoMalaEstrategia=2
-            }
-        }
-        if (!acabada(piloto as Piloto) && !piloto.isProblemasDeFiabilidad){
-            piloto.isProblemasDeFiabilidad=piloto.problemasFiabilidad()
-            if (piloto.isProblemasDeFiabilidad)piloto.isDnf=true
-        }
-    }
+
+
+
+
 
 
     /**
@@ -351,16 +273,7 @@ class `GRAN-PREMIO`:Metereologia {
         accidente(stroll)
     }
 
-    /**
-     * mientras que no este dnf, hacemos la probabilidad de que lo sea, y si lo es activamos el true en el piloto y imprimimos por pantalla
-     * @param piloto
-     */
-    private fun accidente(piloto: Piloto) {
-        if (!piloto.isDnf){
-            piloto.isDnf=piloto.accidenteF()
-            if (piloto.isDnf) println("${piloto.nombre} HA SUFRIDO UN ACCIDENTE EN SU VUELTA ${piloto.vuelta}")
-        }
-    }
+
 
     /**
      * agrupa el conjunto de pitstop de todos
@@ -377,15 +290,7 @@ class `GRAN-PREMIO`:Metereologia {
         pitStopPiloto(stroll)
     }
 
-    /**
-     * siempre que el tiempo de pitstop este en 0 hacemos el pitstop que es un random que duevlve los segundos que tenemso que parar
-     * @param piloto
-     */
-    private fun pitStopPiloto(piloto: Piloto){
-        if (piloto.tiempoPitstop==0) {
-            piloto.tiempoPitstop = piloto.pitStop()
-        }
-    }
+
 
     /**
      * comprueba que todos esten terminado
@@ -395,35 +300,26 @@ class `GRAN-PREMIO`:Metereologia {
      */
     private fun todosTerminan():Boolean{
         if (
-            (acabada(alonso))&&
-            (acabada(checo))&&
-            (acabada(hamilton))&&
-            (acabada(leclerc))&&
-            (acabada(max))&&
-            (acabada(russel))&&
-            (acabada(sainz))&&
-            (acabada(stroll))
+            (alonso.acabada())&&
+            (checo.acabada())&&
+            (hamilton.acabada())&&
+            (leclerc.acabada())&&
+            (max.acabada())&&
+            (russel.acabada())&&
+            (sainz.acabada())&&
+            (stroll.acabada())
         )return true
         return false
     }
 
-    /**
-     * un jugador termina si esta descalidicado o si a dado tres vueltas
-     * @param piloto
-     * @return true si esta acabada
-     * @return false si no a terminado
-     */
-    private fun acabada(piloto: Piloto): Boolean {
-        if (piloto.isTerminada || piloto.isDnf)return true
-        return false
-    }
+
 
 
     private fun moverTodosPilotos() {
         anularPosiciones()
 
-        moverPiloto(max)
-        moverPiloto(checo)
+        max.moverPiloto()
+        checo.moverPiloto()
 
         moverAstonMartin(alonso)
         moverAstonMartin(stroll)
@@ -436,69 +332,27 @@ class `GRAN-PREMIO`:Metereologia {
 
     }
 
-    /**
-     * esta funcion s erealiza siempre que el piloto no haya terminado
-     * si el piloto tiene tiempo en pitstop no se mueve y se resta un segundo al contador de pitstop
-     * si el pitstop esta en 0 se mueve, si la columna es 9 se pone en 0 y se suma una vuelta
-     * @param piloto
-     */
-    private fun moverPiloto(piloto: Piloto){
-        if(!acabada(piloto)){
-            if (piloto.tiempoPitstop!=0){
-                println("${piloto.nombre} ESTA EN PITSTOP")
-                piloto.tiempoPitstop--
-            }
-            if (piloto.tiempoPitstop==0) {
-                if (piloto.columna == 9) {
-                    piloto.vuelta++
-                    piloto.columna = 0
-                    when(piloto){
-                        is RedBull->piloto.isRapida=false
-                    }
-                    if (piloto.vuelta>=3)piloto.isTerminada=true
-                } else piloto.moverPiloto()
-            }
-        }
-    }
-    private fun moverAstonMartin(piloto: AstonMartin){
-        if (piloto.tiempoMalaEstrategia>0){
-            piloto.tiempoMalaEstrategia--
-        }else if (piloto.tiempoMalaEstrategia==0){
-            piloto.isMalaEstrategia=false
-            moverPiloto(piloto as Piloto)
-        }
-    }
-    private fun moverFerrari(piloto: Ferrari){
-        if (piloto.tiempoMalaEstrategia!=0){
-            piloto.tiempoMalaEstrategia--
-        }else if (piloto.tiempoMalaEstrategia==0) {
-            piloto.isMalaEstrategia = false
-            moverPiloto(piloto as Piloto)
-        }
-    }
+
+
+
+
 
     /**
      * agrupa las anulaciones
      * @see anularPiloto
      */
     private fun anularPosiciones() {
-        anularPiloto(max)
-        anularPiloto(checo)
-        anularPiloto(alonso)
-        anularPiloto(stroll)
-        anularPiloto(hamilton)
-        anularPiloto(russel)
-        anularPiloto(sainz)
-        anularPiloto(leclerc)
+        max.anularPiloto(circuito)
+        checo.anularPiloto(circuito)
+        alonso.anularPiloto(circuito)
+        stroll.anularPiloto(circuito)
+        hamilton.anularPiloto(circuito)
+        russel.anularPiloto(circuito)
+        sainz.anularPiloto(circuito)
+        leclerc.anularPiloto(circuito)
     }
 
-    /**
-     * anulamos las posicioes de los jugadores antes de moverlos
-     * @param piloto
-     */
-    private fun anularPiloto(piloto: Piloto){
-        circuito[piloto.fila][piloto.columna]=null
-    }
+
 
     /**
      * imimimos el array posicionando a los jugadores
@@ -551,29 +405,19 @@ class `GRAN-PREMIO`:Metereologia {
         }
     }
 
-    private fun posicionamiento(piloto: Piloto){
-        if (piloto.isDnf){
-            println("${piloto.nombre} DNF")
-        }else{
-            if (piloto.vuelta>=3){
-                println("${piloto.nombre} HA TERMINADO")
-                piloto.isTerminada=true
-            }
-            else circuito[piloto.fila][piloto.columna]=piloto
-        }
-    }
+
     private fun posicionarPilotos() {
-        posicionamiento(max)
-        posicionamiento(checo)
+        max.posicionamiento(circuito)
+        checo.posicionamiento(circuito)
 
-        posicionamiento(alonso)
-        posicionamiento(stroll)
+        alonso.posicionamiento(circuito)
+        stroll.posicionamiento(circuito)
 
-        posicionamiento(hamilton)
-        posicionamiento(russel)
+        hamilton.posicionamiento(circuito)
+        russel.posicionamiento(circuito)
 
-        posicionamiento(sainz)
-        posicionamiento(leclerc)
+        sainz.posicionamiento(circuito)
+        leclerc.posicionamiento(circuito)
 
     }
 
