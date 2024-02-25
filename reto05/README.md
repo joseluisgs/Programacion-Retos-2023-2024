@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 style="font-size: 70px;">Batalla de Héroes Marvel</h1>
+  <h1 style="font-size: 85px;">Batalla de Héroes Marvel</h1>
   <img src="https://i.pinimg.com/originals/36/bd/3d/36bd3d1ea1a751714c9bb42502ab74b1.png" alt="Héroes Marvel" style="width: 75%;">
 </div>
 
@@ -18,17 +18,13 @@ compararás los puntos acumulados por cada índice de las listas para determinar
 - **Habilidad de un Personaje Específico:**
   Solicita al usuario que ingrese el ID de un personaje y muestra sus habilidades.
 
-- **Listado de los personajes con ID par:**
-  Muestra el nombre de los personajes cuyo ID sea par.
+- **Listado de los personajes con ID par**
 
-- **Personaje Más Viejo:**
-  Encuentra al personaje más viejo mostrando solo su nombre y edad.
+- **Personaje Más Viejo:**mostrando solo su nombre y edad.
 
-- **Personaje Más Joven:**
-  Identifica al personaje más joven.
+- **Personaje Más Joven**
 
-- **Personajes que hayan fallecido:**
-  Muestra una lista de los personajes que hayan fallecido.
+- **Personajes que hayan fallecido**
 
 - **Villanos en la Base de Datos:**
   Filtra y muestra la lista de todos los personajes que son villanos.
@@ -36,8 +32,7 @@ compararás los puntos acumulados por cada índice de las listas para determinar
 - **Héroes Vivos:**
   Encuentra y muestra la lista de todos los héroes que están actualmente vivos.
 
-- **Personajes con Edad Menor a 40 y Puntos de Combate Mayor a 70:**
-  Filtra y muestra la lista de los que tienen menos de 40 años y un puntaje mayor a 70.
+- **Personajes con Edad Menor a 40 y Puntos de Combate Mayor a 70**
 
 - **Personajes que no son no Héroes:**
   Identifica y muestra la lista de personajes que son villanos.
