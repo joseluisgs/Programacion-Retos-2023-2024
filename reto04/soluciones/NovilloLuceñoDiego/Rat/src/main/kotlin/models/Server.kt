@@ -32,7 +32,11 @@ data class Server (
      * @param table para recoger un pedido a través de la función "giveRandomOrder()" en la clase Table
      * @param menu la necesita para que la mesa pueda elejir un pedido
      */
-    fun move(currentPosition: Int, kitchen: Kitchen, table: Table, menu: Menu) : Int{
+    fun move(currentPosition: Int,
+             kitchen: Kitchen,
+             table: Table,
+             menu: Menu,
+             ratPosition : Int?) : Int{
         when{
             goingToTable && order == null -> {
                 if (currentPosition == 4){
@@ -44,7 +48,13 @@ data class Server (
             }
 
             goingToTable -> { // Cuando ha llegado a la mesa con el plato
-                if (currentPosition == 4){
+                if (ratPosition != -1 &&
+                    ratPosition == currentPosition &&
+                    (1..10).random() <= 1 ){
+                        println("El camarero se ha tropezado con una rata y se le ha caido el plato")
+                        goingToTable = false
+                        goingForOrder = true
+                }else if (currentPosition == 4){
                     table.order = order
                     resettingPosition = true
                     goingToTable = false

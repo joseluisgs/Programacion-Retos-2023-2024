@@ -42,6 +42,7 @@ class Restaurant(
                         if (j.order != null) print("[\uD83C\uDF54]")
                         else print("[\uD83C\uDF74]")
                     }
+                    is String -> print("[\uD83D\uDC00]")
                     null -> print("[ ]")
                 }
             }
@@ -58,11 +59,37 @@ class Restaurant(
         for (i in restaurantGrid.indices){
             val oldPosition = restaurantGrid[i].indexOfFirst { it is Server }
             val table = (restaurantGrid[i].find { it is Table }) as Table
+            val ratPosition = restaurantGrid[i].indexOfFirst { it is String }
             val newPosition = oldPosition + (restaurantGrid[i][oldPosition] as Server).move(oldPosition,
-                kitchen, table, menu)
+                kitchen, table, menu, ratPosition)
             if (oldPosition != newPosition) { // Solo si se mueve cambia la posicion
                 restaurantGrid[i][newPosition] = restaurantGrid[i][oldPosition]
                 restaurantGrid[i][oldPosition] = null
+            }
+        }
+    }
+
+    /**
+     * Mira si tiene que añadir una rata en el camino
+     */
+    fun maybeAddRatOnThePath(){
+        val thereWillBeRats = (0..10).random() <= 2
+        if (thereWillBeRats){
+            addRat()
+        }
+    }
+
+    /**
+     * Añade una rata en una posición random
+     */
+    private fun addRat() {
+        var ratAdded = false
+        while (!ratAdded) {
+            val x = restaurantGrid.indices.random()
+            val y = restaurantGrid[x].indices.random()
+            if (restaurantGrid[x][y] == null) {
+                restaurantGrid[x][y] = "R"
+                ratAdded = true
             }
         }
     }

@@ -23,10 +23,16 @@ object Controller {
                 resetTableandServer(tables[i])
             }
             //Si están enfadados imprime un mensaje en la consola
-            if (tables[i].checkState() == Mood.MAD && tables[i].order == null) println("La mesa ${tables[i].tableNumber} está enfadada...")
+            else if (tables[i].checkState() == Mood.MAD && tables[i].order == null) println("La mesa ${tables[i].tableNumber} está enfadada...")
             //Si están furiosos, se van y resetea la mesa y el servidor
-            if (tables[i].checkState() == Mood.FURIOUS  && tables[i].order == null){
+            else if (tables[i].checkState() == Mood.FURIOUS  && tables[i].order == null){
                 println("La mesa ${tables[i].tableNumber} ha esperado mucho,y se ha marchado furiosa")
+                restaurant.unhappyCostumers++
+                resetTableandServer(tables[i])
+            }
+            //Si se encuentran una rata
+            else if ((0..100).random() <= 5){
+                println("La mesa ${tables[i].tableNumber} ha encontrado una rata! Han salido corriendo...")
                 restaurant.unhappyCostumers++
                 resetTableandServer(tables[i])
             }
@@ -72,6 +78,7 @@ object Controller {
         while (restaurant.costumers <= 10){
             seatSomeoneIfPossible() // Busca si hay sitios libres, y si hay, sienta a alguien
             addWaitingTimeIfAppropiate() // Si hay alguien sentado añade tiempo de espera
+            restaurant.maybeAddRatOnThePath() //Puede que añada una rata
             checkForNewFinishes() // Busca mesas que han terminado de comer
             addEatingTimeIfAppropiate() // Añade tiempo comiendo si están comiendo
             restaurant.showRestaurant() // Enseña el mapa
