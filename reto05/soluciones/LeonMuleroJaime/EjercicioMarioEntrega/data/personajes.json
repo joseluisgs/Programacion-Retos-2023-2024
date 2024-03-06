@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "nickName": "Iron Man",
+        "nombre": "Tony Stark",
+        "edad": 40,
+        "vivo": false,
+        "villano": false,
+        "habilidad": "Tecnología",
+        "puntosCombate": 75
+    },
+    {
+        "id": 2,
+        "nickName": "Captain America",
+        "nombre": "Steve Rogers",
+        "edad": 95,
+        "vivo": false,
+        "villano": false,
+        "habilidad": "Super Soldado",
+        "puntosCombate": 60
+    },
+    {
+        "id": 3,
+        "nickName": "Thor",
+        "nombre": "Thor Odinson",
+        "edad": 1500,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Trueno",
+        "puntosCombate": 85
+    },
+    {
+        "id": 4,
+        "nickName": "Hulk",
+        "nombre": "Bruce Banner",
+        "edad": 38,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Fuerza Sobrehumana",
+        "puntosCombate": 80
+    },
+    {
+        "id": 5,
+        "nickName": "Black Widow",
+        "nombre": "Natasha Romanoff",
+        "edad": 35,
+        "vivo": false,
+        "villano": false,
+        "habilidad": "Combate",
+        "puntosCombate": 40
+    },
+    {
+        "id": 6,
+        "nickName": "Spider-Man",
+        "nombre": "Peter Parker",
+        "edad": 25,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Fuerza Sobrehumana",
+        "puntosCombate": 65
+    },
+    {
+        "id": 7,
+        "nickName": "Doctor Strange",
+        "nombre": "Stephen Strange",
+        "edad": 45,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Magia",
+        "puntosCombate": 95
+    },
+    {
+        "id": 8,
+        "nickName": "Black Panther",
+        "nombre": "T'Challa",
+        "edad": 35,
+        "vivo": false,
+        "villano": false,
+        "habilidad": "Fuerza Sobrehumana",
+        "puntosCombate": 65
+    },
+    {
+        "id": 9,
+        "nickName": "Captaina Marvel",
+        "nombre": "Carol Danvers",
+        "edad": 30,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Energía",
+        "puntosCombate": 90
+    },
+    {
+        "id": 10,
+        "nickName": "Wolverine",
+        "nombre": "Logan",
+        "edad": 150,
+        "vivo": false,
+        "villano": false,
+        "habilidad": "Regeneración",
+        "puntosCombate": 70
+    },
+    {
+        "id": 11,
+        "nickName": "Deadpool",
+        "nombre": "Wade Wilson",
+        "edad": 35,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Regeneración",
+        "puntosCombate": 70
+    },
+    {
+        "id": 12,
+        "nickName": "Magneto",
+        "nombre": "Erik Lehnsher",
+        "edad": 70,
+        "vivo": true,
+        "villano": true,
+        "habilidad": "Magnetismo",
+        "puntosCombate": 85
+    },
+    {
+        "id": 13,
+        "nickName": "Loki",
+        "nombre": "Loki Laufeyson",
+        "edad": 1000,
+        "vivo": true,
+        "villano": true,
+        "habilidad": "Ilusiones",
+        "puntosCombate": 75
+    },
+    {
+        "id": 14,
+        "nickName": "Duende Verde",
+        "nombre": "Norman Osborn",
+        "edad": 50,
+        "vivo": true,
+        "villano": true,
+        "habilidad": "Fuerza Sobrehumana",
+        "puntosCombate": 55
+    },
+    {
+        "id": 15,
+        "nickName": "Doctor Octopus",
+        "nombre": "Otto Octavius",
+        "edad": 60,
+        "vivo": true,
+        "villano": true,
+        "habilidad": "Tecnología",
+        "puntosCombate": 55
+    },
+    {
+        "id": 16,
+        "nickName": "Venom",
+        "nombre": "Eddie Brock",
+        "edad": 40,
+        "vivo": true,
+        "villano": true,
+        "habilidad": "Fuerza Sobrehumana",
+        "puntosCombate": 70
+    },
+    {
+        "id": 17,
+        "nickName": "Mystica",
+        "nombre": "Raven Darkhölme",
+        "edad": 100,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Transformación",
+        "puntosCombate": 50
+    },
+    {
+        "id": 18,
+        "nickName": "Bruja Escarlata",
+        "nombre": "Wanda Maximoff",
+        "edad": 35,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Manipulación de la realidad",
+        "puntosCombate": 100
+    },
+    {
+        "id": 19,
+        "nickName": "Vision",
+        "nombre": "Visión",
+        "edad": 5,
+        "vivo": false,
+        "villano": false,
+        "habilidad": "Tecnología",
+        "puntosCombate": 75
+    },
+    {
+        "id": 20,
+        "nickName": "Winter Soldier",
+        "nombre": "Bucky Barnes",
+        "edad": 100,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Super Soldado",
+        "puntosCombate": 55
+    },
+    {
+        "id": 21,
+        "nickName": "Falcon",
+        "nombre": "Sam Wilson",
+        "edad": 40,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Vuelo",
+        "puntosCombate": 35
+    },
+    {
+        "id": 22,
+        "nickName": "Ant-Man",
+        "nombre": "Scott Lang",
+        "edad": 40,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Reducir y aumentar de tamaño",
+        "puntosCombate": 60
+    },
+    {
+        "id": 23,
+        "nickName": "Wasp",
+        "nombre": "Hope van Dyne",
+        "edad": 35,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Reducir y aumentar de tamaño",
+        "puntosCombate": 60
+    },
+    {
+        "id": 24,
+        "nickName": "Groot",
+        "nombre": "Groot",
+        "edad": 16,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Regeneración",
+        "puntosCombate": 65
+    },
+    {
+        "id": 25,
+        "nickName": "Rocket",
+        "nombre": "Rocket Raccoon",
+        "edad": 8,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Animal Modificado",
+        "puntosCombate": 55
+    },
+    {
+        "id": 26,
+        "nickName": "Star-Lord",
+        "nombre": "Peter Quill",
+        "edad": 35,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Combate",
+        "puntosCombate": 50
+    },
+    {
+        "id": 27,
+        "nickName": "Gamora",
+        "nombre": "Gamora",
+        "edad": 35,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Combate",
+        "puntosCombate": 40
+    },
+    {
+        "id": 28,
+        "nickName": "Drax",
+        "nombre": "Drax el Destructor",
+        "edad": 40,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Fuerza sobrehumana",
+        "puntosCombate": 45
+    },
+    {
+        "id": 29,
+        "nickName": "Ojo de Halcón",
+        "nombre": "Clint Barton",
+        "edad": 45,
+        "vivo": true,
+        "villano": false,
+        "habilidad": "Punteria",
+        "puntosCombate": 30
+    },
+    {
+        "id": 30,
+        "nickName": "Jean",
+        "nombre": "Jean Grey",
+        "edad": 57,
+        "vivo": false,
+        "villano": false,
+        "habilidad": "Telepatía",
+        "puntosCombate": 80
+    }
+]
