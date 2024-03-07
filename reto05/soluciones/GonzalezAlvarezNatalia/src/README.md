@@ -33,3 +33,7 @@ Los resultados de los combates entre los héroes se almacenan en el archivo en f
 
 Para ello en la clase _HeroeController()_ tenemos la función guardarResultadoBatalla(), donde mediante la función
 appendText() podemos ir guardando los diferentes datos sin sobreescribir los anteriores.
+
+## Archivo heroes.zip
+
+Este archivo comprime todos los ficheros creados (bitacora.txt, heroes.json y personajes.csv).

@@ -1,4 +1,4 @@
-package org.example.controllers
+package org.example.services
 
 import org.example.models.Heroe
 import java.io.File
@@ -10,7 +10,7 @@ import java.util.*
  * @author Natalia González
  * @since 1.0
  */
-class HeroeController {
+class HeroeService {
 
     /**
      * Elige aleatoriamente una lista de héroes vivos sin repetición.
@@ -120,5 +120,20 @@ class HeroeController {
         val formatoFecha = SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
         val fechaActual = Calendar.getInstance().time
         return formatoFecha.format(fechaActual)
+    }
+
+    /**
+     * variable que indica una lista de heroes.
+     */
+    private val listaDeHeroes = mutableListOf<Heroe>()
+
+    /**
+     * Obtiene todos los heroes en una lista.
+     * @return La lista con los heroes.
+     * @author Natalia González
+     * @since 1.0
+     */
+    fun obtenerHeroes(): List<Heroe> {
+        return listaDeHeroes.toList()
     }
 }

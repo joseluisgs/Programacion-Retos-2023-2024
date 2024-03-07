@@ -1,5 +1,7 @@
 package org.example.models
 
+import kotlinx.serialization.Serializable
+
 /**
  * Clase que representa a un héroe.
  * @param id El ID del héroe.
@@ -13,6 +15,8 @@ package org.example.models
  * @author Natalia González
  * @since 1.0
  */
+
+@Serializable
 data class Heroe(
     val id : Int,
     val nickname : String,

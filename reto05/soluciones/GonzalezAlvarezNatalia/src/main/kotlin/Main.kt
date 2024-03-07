@@ -1,11 +1,18 @@
 package org.example
 
-import org.example.controllers.HeroeController
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import org.example.services.HeroeService
 import org.example.models.Heroe
+import org.example.services.BackupImpl
+import org.lighthousegames.logging.logging
+import java.io.File
 import kotlin.io.path.*
 
+val logger = logging()
+
 fun main() {
-    val heroeController = HeroeController()
+    val heroeController = HeroeService()
 
     val directorioActual = System.getProperty("user.dir")
     println("El directorio actual es: $directorioActual")
@@ -78,4 +85,24 @@ fun main() {
     println(ganador)
 
     heroeController.guardarResultadoBatalla(ganador)
+
+    val json = Json {
+        prettyPrint = true
+        ignoreUnknownKeys = true
+    }
+
+    val servicioHeroe = HeroeService()
+    val listaDeHeroes = servicioHeroe.obtenerHeroes()
+
+    //Backup
+    val jsonHeroes = json.encodeToString(listaDeHeroes)
+    val jsonFile = File("data/heroes.json")
+
+    jsonFile.writeText(jsonHeroes)
+    logger.info{"Los datos se guardaron en data/heroes.json"}
+
+    val backupService = BackupImpl()
+    backupService.backup()
+    logger.info { "Backup finalizado" }
+
 }
