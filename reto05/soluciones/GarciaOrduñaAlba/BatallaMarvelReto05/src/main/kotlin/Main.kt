@@ -1,5 +1,10 @@
 package org.example
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import org.example.service.BackupImpl
 import org.example.service.PersonajeService
+import java.io.File
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
@@ -58,17 +63,23 @@ fun main() {
     println("Personajes aleatorios:")
     personajesAleatorios.forEach { println(it) }
 
-    /* val jsonPersonajes = Json.encodeToString(personajes)
-    val jsonFile = File("personajes.json")
-    jsonFile.writeText(jsonPersonajes)
-    println("Datos guardados en personajes.json")
+    val json = Json {
+        prettyPrint = true
+        ignoreUnknownKeys = true
+    }
 
+    val jsonPersonajes = json.encodeToString(personajes)
+    val jsonFile = File("data/personajes.json")
+
+    jsonFile.writeText(jsonPersonajes)
+    println("Datos guardados en data/personajes.json")
     // Realizar un backup de los datos
     val backupService = BackupImpl()
     backupService.backup()
-    println("Backup realizado con éxito")*/
+    println("Backup realizado con éxito")
 
     // Determinación del Ganador
     val ganador = personajeService.determinarGanador()
     println(ganador)
+
 }

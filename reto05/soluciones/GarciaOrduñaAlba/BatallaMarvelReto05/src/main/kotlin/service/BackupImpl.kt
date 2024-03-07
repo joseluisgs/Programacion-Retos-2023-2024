@@ -11,7 +11,7 @@ import java.util.zip.ZipFile
 class BackupImpl : Backup {
     override fun backup() {
         try {
-            val tempDir = Files.createTempDirectory("personaje_backup")
+            val tempDir = Files.createTempDirectory("personajes_backup")
             println("Directorio temporal creado: $tempDir")
 
             val sourceFilePath = Paths.get(Config.storageDir, Config.storageFile)
@@ -38,7 +38,7 @@ class BackupImpl : Backup {
 
     override fun restore() {
         try {
-            val tempDir = Files.createTempDirectory("barcos_restore")
+            val tempDir = Files.createTempDirectory("personajes_restore")
             println("Directorio temporal creado: $tempDir")
 
             val zipFilePath = Paths.get(Config.storageBackupDir, Config.storageBackupFile)

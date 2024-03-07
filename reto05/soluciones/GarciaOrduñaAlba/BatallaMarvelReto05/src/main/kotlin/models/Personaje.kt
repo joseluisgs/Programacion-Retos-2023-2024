@@ -11,9 +11,9 @@ Clase de datos que representa a un personaje en el sistema.
 @property habilidad Habilidad especial o destreza del personaje.
 @property puntosCombate Puntos de combate que indican la fuerza del personaje.
  */
-/*import kotlinx.serialization.Serializable
+import kotlinx.serialization.Serializable
 
-@Serializable*/
+@Serializable
 data class Personaje(
     val id: Int,
     val nickName: String,

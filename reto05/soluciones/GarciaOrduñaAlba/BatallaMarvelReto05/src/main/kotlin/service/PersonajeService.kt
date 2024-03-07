@@ -1,6 +1,7 @@
 package org.example.service
 import org.example.models.Personaje
 import java.io.BufferedReader
+import java.io.File
 import java.io.InputStreamReader
 /**
 
@@ -78,11 +79,15 @@ class PersonajeService {
         val tusHeroes = obtenerPersonajesAleatorios()
         val heroesMaquina = obtenerPersonajesAleatorios()
 
-        println("Tus héroes:")
-        tusHeroes.forEach { println(it) }
+        val sb = StringBuilder()
 
-        println("Héroes de la Máquina:")
-        heroesMaquina.forEach { println(it) }
+        sb.appendln("Tus héroes:")
+        tusHeroes.forEach { sb.appendln(it) }
+
+        sb.appendln("Héroes de la Máquina:")
+        heroesMaquina.forEach { sb.appendln(it) }
+
+        println(sb.toString()) // Imprimir las listas de personajes en la consola
 
         var puntosTuyos = 0
         var puntosMaquina = 0
@@ -99,11 +104,17 @@ class PersonajeService {
             }
         }
 
-        // Anunciar al ganador de la Batalla de Héroes Marvel
-        return when {
+        // Determinar el resultado
+        val resultado = when {
             puntosTuyos > puntosMaquina -> "¡Felicidades! ¡Has ganado la Batalla de Héroes Marvel!"
             puntosTuyos < puntosMaquina -> "¡La Máquina ha ganado la Batalla de Héroes Marvel!"
             else -> "La Batalla de Héroes Marvel ha terminado en empate."
         }
+
+        // Escribir el resultado en el archivo de bitácora
+        val rutaBitacora = "data/bitacora.txt"
+        File(rutaBitacora).appendText("$sb\n$resultado\n")
+
+        return resultado
     }
 }

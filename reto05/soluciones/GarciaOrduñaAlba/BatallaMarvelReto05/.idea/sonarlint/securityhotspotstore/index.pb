@@ -17,3 +17,7 @@ C
 data/personajes.csv,7\8\7880108edda97c40c578aeeca31894e51bdfa0fc
 I
 src/main/kotlin/README.md,7\5\75046ffc3397fbf8fcb9e7ffbc5e8ae3bc980d46
+A
+data/bitacora.txt,5\0\5013cfb01216fe09e31bc011876eca35b6af5dff
+D
+data/personajes.json,6\f\6fbdafd3f92f38318bb0f6bf6034d20bec16b6e0
