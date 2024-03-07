@@ -1,0 +1,21 @@
+INFORME DE BATALLA
+FECHA: 2024-03-04
+LISTA DE YAHYA: [Sam Wilson, Eddie Brock, Wanda Maximoff, Steve Rogers, Groot]
+LISTA DE LA MAQUINA: [Scott Lang, Peter Quill, Wanda Maximoff, Norman Osborn, Otto Octavius]
+PUNTOS DE YAHYA: 330
+PUNTOS DE LA MAQUINA: 320
+GANADOR: Yahya
+INFORME DE BATALLA
+FECHA: 2024-03-07
+LISTA DE YAHYA: [Visión, Scott Lang, Raven Darkhölme, Tony Stark, Loki Laufeyson]
+LISTA DE LA MAQUINA: [Groot, Rocket Raccoon, Steve Rogers, Hope van Dyne, Eddie Brock]
+PUNTOS DE YAHYA: 335
+PUNTOS DE LA MAQUINA: 310
+GANADOR: Yahya
+INFORME DE BATALLA
+FECHA: 2024-03-07
+LISTA DE YAHYA: [Carol Danvers, Scott Lang, Wanda Maximoff, Groot, Loki Laufeyson]
+LISTA DE LA MAQUINA: [Gamora, Norman Osborn, Tony Stark, Otto Octavius, Sam Wilson]
+PUNTOS DE YAHYA: 390
+PUNTOS DE LA MAQUINA: 260
+GANADOR: Yahya
