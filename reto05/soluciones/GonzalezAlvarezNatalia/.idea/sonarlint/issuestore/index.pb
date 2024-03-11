@@ -1,0 +1,41 @@
+
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+G
+src/main/kotlin/Main.kt,d\8\d83ae3847b7d408136086cc5e9e95f5f7c126ed5
+C
+settings.gradle.kts,7\4\749edfcc96398253e5b3416184e95c46621da850
+C
+data/personajes.csv,7\8\7880108edda97c40c578aeeca31894e51bdfa0fc
+O
+src/main/kotlin/models/Heroe.kt,6\0\609f346ebe59720b6e10c00844849878c421c1b3
+V
+&src/main/kotlin/mappers/HeroeMapper.kt,6\7\674dc747d81e774e4d0a689874e9239bc9bf22ad
+O
+src/main/kotlin/dto/HeroeDto.kt,b\2\b2b6bcbe9f2db76f861ec6331be4443842de72c3
+A
+gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
+A
+data/bitacora.txt,5\0\5013cfb01216fe09e31bc011876eca35b6af5dff
+<
+bitacora.txt,e\6\e6ce80d3d57d26fc6405434de6a6f03e802d026a
+^
+.src/main/kotlin/controllers/HeroeController.kt,3\9\39ae7d79df5b19acc01982457de58a150fc00853
+=
+src/README.md,8\3\83aa3445a7f65c488e8ccd0a5ad0e80c174dc329
+P
+ src/main/kotlin/config/Config.kt,0\4\043aa446d40a768add682fb019dcec7856967ae3
+R
+"src/main/kotlin/services/Backup.kt,1\0\10c36fd9dfbe6866ab441d540e3f9ec6b929935e
+V
+&src/main/kotlin/services/BackupImpl.kt,1\5\15cb63219f1874d96050cf5f904a61910db924eb
+U
+%src/main/kotlin/repositories/Cache.kt,e\c\ecc625a469839d439768acd8b2613a11c9ebe648
+Y
+)src/main/kotlin/repositories/CacheImpl.kt,d\9\d9309083e4e7a08c22cb7ea9bbfd408e766e32bc
+X
+(src/main/kotlin/services/HeroeService.kt,5\3\53fc8a875fa7c3e372dc91dff2decde68ea17dd7
+\
+,src/main/kotlin/services/HeroeServiceImpl.kt,7\2\72cef7cad16a617e6f24612049ce8cb52b4f18b2
+@
+data/heroes.json,1\9\190dd5d7e07522f1e03e2add259314c41ab6068a
