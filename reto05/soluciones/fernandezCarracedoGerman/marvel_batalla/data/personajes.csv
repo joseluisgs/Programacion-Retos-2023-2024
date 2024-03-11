@@ -1,0 +1,31 @@
+ID,NickName,Nombre,Edad,Vivo,Villano,Habilidad,PC
+1,Iron Man,Tony Stark,40,false,false,Tecnología,75
+2,Captain America,Steve Rogers,95,false,false,Super Soldado,60
+3,Thor,Thor Odinson,1500,true,false,Trueno,85
+4,Hulk,Bruce Banner,38,true,false,Fuerza Sobrehumana,80
+5,Black Widow,Natasha Romanoff,35,false,false,Combate,40
+6,Spider-Man,Peter Parker,25,true,false,Fuerza Sobrehumana,65
+7,Doctor Strange,Stephen Strange,45,true,false,Magia,95
+8,Black Panther,T'Challa,35,false,false,Fuerza Sobrehumana,65
+9,Captaina Marvel,Carol Danvers,30,true,false,Energía,90
+10,Wolverine,Logan,150,false,false,Regeneración,70
+11,Deadpool,Wade Wilson,35,true,false,Regeneración,70
+12,Magneto,Erik Lehnsher,70,true,true,Magnetismo,85
+13,Loki,Loki Laufeyson,1000,true,true,Ilusiones,75
+14,Duende Verde,Norman Osborn,50,true,true,Fuerza Sobrehumana,55
+15,Doctor Octopus,Otto Octavius,60,true,true,Tecnología,55
+16,Venom,Eddie Brock,40,true,true,Fuerza Sobrehumana,70
+17,Mystica,Raven Darkhölme,100,true,false,Transformación,50
+18,Bruja Escarlata,Wanda Maximoff,35,true,false,Manipulación de la realidad,100
+19,Vision,Visión,5,false,false,Tecnología,75
+20,Winter Soldier,Bucky Barnes,100,true,false,Super Soldado,55
+21,Falcon,Sam Wilson,40,true,false,Vuelo,35
+22,Ant-Man,Scott Lang,40,true,false,Reducir y aumentar de tamaño,60
+23,Wasp,Hope van Dyne,35,true,false,Reducir y aumentar de tamaño,60
+24,Groot,Groot,16,true,false,Regeneración,65
+25,Rocket,Rocket Raccoon,8,true,false,Animal Modificado,55
+26,Star-Lord,Peter Quill,35,true,false,Combate,50
+27,Gamora,Gamora,35,true,false,Combate,40
+28,Drax,Drax el Destructor,40,true,false,Fuerza sobrehumana,45
+29,Ojo de Halcón,Clint Barton,45,true,false,Punteria,30
+30,Jean,Jean Grey,57,false,false,Telepatía,80

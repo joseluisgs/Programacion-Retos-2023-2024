@@ -1,0 +1,8 @@
+
+Fecha: 2024-03-03	Puntos Jugador: 2	Puntos Máquina: 3	Ganador: Máquina
+Fecha: 2024-03-03	Puntos Jugador: 2	Puntos Máquina: 3	Ganador: Máquina
+Fecha: 2024-03-03	Puntos Jugador: 3	Puntos Máquina: 2	Ganador: Jugador
+Fecha: 2024-03-07	Puntos Jugador: 3	Puntos Máquina: 2	Ganador: Jugador
+Fecha: 2024-03-07	Puntos Jugador: 1	Puntos Máquina: 4	Ganador: Máquina
+Fecha: 2024-03-07	Puntos Jugador: 1	Puntos Máquina: 4	Ganador: Máquina
+Fecha: 2024-03-07	Puntos Jugador: 1	Puntos Máquina: 4	Ganador: Máquina
