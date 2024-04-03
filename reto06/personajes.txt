@@ -1,0 +1,108 @@
+Guerreros:
+
+- Link
+    - Nombre: Link
+    - Habilidad: Maestría con la espada
+    - Ataque: 70 puntos
+    - Edad: 17 años
+    - Arma: Espada Maestra
+
+- Zelda
+    - Nombre: Zelda
+    - Habilidad: Magia de luz
+    - Ataque: 40 puntos
+    - Edad: 20 años
+    - Arma: Báculo de Luz
+
+- Impa (Guardiana)
+    - Nombre: Impa
+    - Habilidad: Sigilo ninja
+    - Ataque: 45 puntos
+    - Edad: 50 años
+    - Arma: Hojas Gemelas Sheikah
+
+- Mipha (Aliada)
+    - Nombre: Mipha
+    - Habilidad: Curación acuática
+    - Ataque: 35 puntos
+    - Edad: 25 años
+    - Arma: Lanza del Dominio Zora
+
+- Daruk (Campeón Goron)
+    - Nombre: Daruk
+    - Habilidad: Resistencia rocosa
+    - Ataque: 55 puntos
+    - Edad: 45 años
+    - Arma: Escudo del Talión
+
+- Urbosa (Campeona Gerudo)
+    - Nombre: Urbosa
+    - Habilidad: Furia del desierto
+    - Ataque: 60 puntos
+    - Edad: 38 años
+    - Arma: Espada de los Segadores
+
+- Revali (Campeón Rito)
+    - Nombre: Revali
+    - Habilidad: Precisión aérea
+    - Ataque: 70 puntos
+    - Edad: 27 años
+    - Arma: Arco del Valle
+
+- Sidon (Príncipe Zora)
+    - Nombre: Sidon
+    - Habilidad: Dominio del agua
+    - Ataque: 50 puntos
+    - Edad: 22 años
+    - Arma: Lanza Zora
+
+Enemigos:
+
+- Ganondorf (Jefe Final)
+    - Nombre: Ganondorf
+    - Habilidad: Poder oscuro supremo
+    - Ataque: 70 puntos
+    - Edad: Más de 2000 años
+    - Arma: Espada Maldita
+
+- Bokoblin Rojo (Enemigo)
+    - Nombre: Bokoblin Rojo
+    - Habilidad: Emboscada furtiva
+    - Ataque: 10 puntos
+    - Edad: 50 años
+    - Arma: Mazo Oxidado
+
+- Bokoblin Azul (Enemigo)
+    - Nombre: Bokoblin Azul
+    - Habilidad: Agilidad esquiva
+    - Ataque: 15 puntos
+    - Edad: 60 años
+    - Arma: Lanza de Hierro
+
+- Moblin (Enemigo)
+    - Nombre: Moblin
+    - Habilidad: Fuerza bruta
+    - Ataque: 25 puntos
+    - Edad: 70 años
+    - Arma: Gran Mazo
+
+- Stalfos (Enemigo)
+    - Nombre: Stalfos
+    - Habilidad: Regeneración ósea
+    - Ataque: 30 puntos
+    - Edad: 200 años
+    - Arma: Espada de Hueso
+
+- Lynel (Enemigo)
+    - Nombre: Lynel
+    - Habilidad: Embestida imparable
+    - Ataque: 45 puntos
+    - Edad: 150 años
+    - Arma: Hacha de Guerra Lynel
+
+- Hinox (Enemigo)
+    - Nombre: Hinox
+    - Habilidad: Resistencia titánica
+    - Ataque: 60 puntos
+    - Edad: 500 años
+    - Arma: Mazo Gigante
