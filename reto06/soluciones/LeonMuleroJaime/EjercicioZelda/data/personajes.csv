@@ -1,0 +1,16 @@
+Tipo,Nombre,Habilidad,Ataque,Edad,Arma
+Guerrero,Link,Maestría con la espada,70,17,Espada Maestra
+Guerrero,Zelda,Magia de luz,40,20,Báculo de Luz
+Guerrero,Impa,Sigilo ninja,45,50,Hojas Gemelas Sheikah
+Guerrero,Mipha,Curación acuática,35,25,Lanza del Dominio Zora
+Guerrero,Daruk,Resistencia rocosa,55,45,Escudo del Talión
+Guerrero,Urbosa,Furia del desierto,60,38,Espada de los Segadores
+Guerrero,Revali,Precisión aérea,70,27,Arco del Valle
+Guerrero,Sidon,Dominio del agua,50,22,Lanza Zora
+Enemigo,Ganondorf,Poder oscuro supremo,70,2000,Espada Maldita
+Enemigo,Bokoblin Rojo,Emboscada furtiva,10,50,Mazo Oxidado
+Enemigo,Bokoblin Azul,Agilidad esquiva,15,60,Lanza de Hierro
+Enemigo,Moblin,Fuerza bruta,25,70,Gran Mazo
+Enemigo,Stalfos,Regeneración ósea,30,200,Espada de Hueso
+Enemigo,Lynel,Embestida imparable,45,150,Hacha de Guerra Lynel
+Enemigo,Hinox,Resistencia titánica,60,500,Mazo Gigante
