@@ -1,0 +1,137 @@
+[
+    {
+        "nombre": "Link",
+        "tipo": "Guerreros",
+        "habilidad": "Maestría con la espada",
+        "ataque": 70,
+        "edad": 17,
+        "arma": "Espada Maestra",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Zelda",
+        "tipo": "Guerreros",
+        "habilidad": "Magia de luz",
+        "ataque": 40,
+        "edad": 20,
+        "arma": "Báculo de Luz",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Impa (Guardiana)",
+        "tipo": "Guerreros",
+        "habilidad": "Sigilo ninja",
+        "ataque": 45,
+        "edad": 50,
+        "arma": "Hojas Gemelas Sheikah",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Mipha (Aliada)",
+        "tipo": "Guerreros",
+        "habilidad": "Curación acuática",
+        "ataque": 35,
+        "edad": 25,
+        "arma": "Lanza del Dominio Zora",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Daruk (Campeón Goron)",
+        "tipo": "Guerreros",
+        "habilidad": "Resistencia rocosa",
+        "ataque": 55,
+        "edad": 45,
+        "arma": "Escudo del Talión",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Urbosa (Campeona Gerudo)",
+        "tipo": "Guerreros",
+        "habilidad": "Furia del desierto",
+        "ataque": 60,
+        "edad": 38,
+        "arma": "Espada de los Segadores",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Revali (Campeón Rito)",
+        "tipo": "Guerreros",
+        "habilidad": "Precisión aérea",
+        "ataque": 70,
+        "edad": 27,
+        "arma": "Arco del Valle",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Sidon (Príncipe Zora)",
+        "tipo": "Guerreros",
+        "habilidad": "Dominio del agua",
+        "ataque": 50,
+        "edad": 22,
+        "arma": "Lanza Zora",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Ganondorf (Jefe Final)",
+        "tipo": "Enemigos",
+        "habilidad": "Poder oscuro supremo",
+        "ataque": 70,
+        "edad": 2000,
+        "arma": "Espada Maldita",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Bokoblin Rojo (Enemigo)",
+        "tipo": "Enemigos",
+        "habilidad": "Emboscada furtiva",
+        "ataque": 10,
+        "edad": 50,
+        "arma": "Mazo Oxidado",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Bokoblin Azul (Enemigo)",
+        "tipo": "Enemigos",
+        "habilidad": "Agilidad esquiva",
+        "ataque": 15,
+        "edad": 60,
+        "arma": "Lanza de Hierro",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Moblin (Enemigo)",
+        "tipo": "Enemigos",
+        "habilidad": "Fuerza bruta",
+        "ataque": 25,
+        "edad": 70,
+        "arma": "Gran Mazo",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Stalfos (Enemigo)",
+        "tipo": "Enemigos",
+        "habilidad": "Regeneración ósea",
+        "ataque": 30,
+        "edad": 200,
+        "arma": "Espada de Hueso",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Lynel (Enemigo)",
+        "tipo": "Enemigos",
+        "habilidad": "Embestida imparable",
+        "ataque": 45,
+        "edad": 150,
+        "arma": "Hacha de Guerra Lynel",
+        "isDeleted": null
+    },
+    {
+        "nombre": "Hinox (Enemigo)",
+        "tipo": "Enemigos",
+        "habilidad": "Resistencia titánica",
+        "ataque": 60,
+        "edad": 500,
+        "arma": "Mazo Gigante",
+        "isDeleted": null
+    }
+]
