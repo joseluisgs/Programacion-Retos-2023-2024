@@ -1,0 +1,122 @@
+[
+    {
+        "nombre": "Link",
+        "tipo": "Guerrero",
+        "habilidad": "Maestría con la espada",
+        "ataque": 70,
+        "edad": 17,
+        "arma": "Espada Maestra"
+    },
+    {
+        "nombre": "Zelda",
+        "tipo": "Guerrero",
+        "habilidad": "Magia de luz",
+        "ataque": 40,
+        "edad": 20,
+        "arma": "Báculo de Luz"
+    },
+    {
+        "nombre": "Impa",
+        "tipo": "Guerrero",
+        "habilidad": "Sigilo ninja",
+        "ataque": 45,
+        "edad": 50,
+        "arma": "Hojas Gemelas Sheikah"
+    },
+    {
+        "nombre": "Mipha",
+        "tipo": "Guerrero",
+        "habilidad": "Curación acuática",
+        "ataque": 35,
+        "edad": 25,
+        "arma": "Lanza del Dominio Zora"
+    },
+    {
+        "nombre": "Daruk",
+        "tipo": "Guerrero",
+        "habilidad": "Resistencia rocosa",
+        "ataque": 55,
+        "edad": 45,
+        "arma": "Escudo del Talión"
+    },
+    {
+        "nombre": "Urbosa",
+        "tipo": "Guerrero",
+        "habilidad": "Furia del desierto",
+        "ataque": 60,
+        "edad": 38,
+        "arma": "Espada de los Segadores"
+    },
+    {
+        "nombre": "Revali",
+        "tipo": "Guerrero",
+        "habilidad": "Precisión aérea",
+        "ataque": 70,
+        "edad": 27,
+        "arma": "Arco del Valle"
+    },
+    {
+        "nombre": "Sidon",
+        "tipo": "Guerrero",
+        "habilidad": "Dominio del agua",
+        "ataque": 50,
+        "edad": 22,
+        "arma": "Lanza Zora"
+    },
+    {
+        "nombre": "Ganondorf",
+        "tipo": "Enemigo",
+        "habilidad": "Poder oscuro supremo",
+        "ataque": 70,
+        "edad": 2000,
+        "arma": "Espada Maldita"
+    },
+    {
+        "nombre": "Bokoblin Rojo",
+        "tipo": "Enemigo",
+        "habilidad": "Emboscada furtiva",
+        "ataque": 10,
+        "edad": 50,
+        "arma": "Mazo Oxidado"
+    },
+    {
+        "nombre": "Bokoblin Azul",
+        "tipo": "Enemigo",
+        "habilidad": "Agilidad esquiva",
+        "ataque": 15,
+        "edad": 60,
+        "arma": "Lanza de Hierro"
+    },
+    {
+        "nombre": "Moblin",
+        "tipo": "Enemigo",
+        "habilidad": "Fuerza bruta",
+        "ataque": 25,
+        "edad": 70,
+        "arma": "Gran Mazo"
+    },
+    {
+        "nombre": "Stalfos",
+        "tipo": "Enemigo",
+        "habilidad": "Regeneración ósea",
+        "ataque": 30,
+        "edad": 200,
+        "arma": "Espada de Hueso"
+    },
+    {
+        "nombre": "Lynel",
+        "tipo": "Enemigo",
+        "habilidad": "Embestida imparable",
+        "ataque": 45,
+        "edad": 150,
+        "arma": "Hacha de Guerra Lynel"
+    },
+    {
+        "nombre": "Hinox",
+        "tipo": "Enemigo",
+        "habilidad": "Resistencia titánica",
+        "ataque": 60,
+        "edad": 500,
+        "arma": "Mazo Gigante"
+    }
+]
