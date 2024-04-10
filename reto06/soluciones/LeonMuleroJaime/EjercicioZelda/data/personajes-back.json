@@ -1,0 +1,167 @@
+[
+    {
+        "tipo": "Guerrero",
+        "nombre": "Link",
+        "habilidad": "Maestría con la espada",
+        "ataque": 70,
+        "edad": 17,
+        "arma": "Espada Maestra",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Guerrero",
+        "nombre": "Zelda",
+        "habilidad": "Magia de luz",
+        "ataque": 40,
+        "edad": 20,
+        "arma": "Báculo de Luz",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Guerrero",
+        "nombre": "Impa",
+        "habilidad": "Sigilo ninja",
+        "ataque": 45,
+        "edad": 50,
+        "arma": "Hojas Gemelas Sheikah",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Guerrero",
+        "nombre": "Mipha",
+        "habilidad": "Curación acuática",
+        "ataque": 35,
+        "edad": 25,
+        "arma": "Lanza del Dominio Zora",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Guerrero",
+        "nombre": "Daruk",
+        "habilidad": "Resistencia rocosa",
+        "ataque": 55,
+        "edad": 45,
+        "arma": "Escudo del Talión",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Guerrero",
+        "nombre": "Urbosa",
+        "habilidad": "Furia del desierto",
+        "ataque": 60,
+        "edad": 38,
+        "arma": "Espada de los Segadores",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Guerrero",
+        "nombre": "Revali",
+        "habilidad": "Precisión aérea",
+        "ataque": 70,
+        "edad": 27,
+        "arma": "Arco del Valle",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Guerrero",
+        "nombre": "Sidon",
+        "habilidad": "Dominio del agua",
+        "ataque": 50,
+        "edad": 22,
+        "arma": "Lanza Zora",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Enemigo",
+        "nombre": "Ganondorf",
+        "habilidad": "Poder oscuro supremo",
+        "ataque": 70,
+        "edad": 2000,
+        "arma": "Espada Maldita",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Enemigo",
+        "nombre": "Bokoblin Rojo",
+        "habilidad": "Emboscada furtiva",
+        "ataque": 10,
+        "edad": 50,
+        "arma": "Mazo Oxidado",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Enemigo",
+        "nombre": "Bokoblin Azul",
+        "habilidad": "Agilidad esquiva",
+        "ataque": 15,
+        "edad": 60,
+        "arma": "Lanza de Hierro",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Enemigo",
+        "nombre": "Moblin",
+        "habilidad": "Fuerza bruta",
+        "ataque": 25,
+        "edad": 70,
+        "arma": "Gran Mazo",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Enemigo",
+        "nombre": "Stalfos",
+        "habilidad": "Regeneración ósea",
+        "ataque": 30,
+        "edad": 200,
+        "arma": "Espada de Hueso",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Enemigo",
+        "nombre": "Lynel",
+        "habilidad": "Embestida imparable",
+        "ataque": 45,
+        "edad": 150,
+        "arma": "Hacha de Guerra Lynel",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    },
+    {
+        "tipo": "Enemigo",
+        "nombre": "Hinox",
+        "habilidad": "Resistencia titánica",
+        "ataque": 60,
+        "edad": 500,
+        "arma": "Mazo Gigante",
+        "created_at": "2024-04-08",
+        "updated_at": "2024-04-08",
+        "is_deleted": false
+    }
+]
