@@ -15,6 +15,10 @@ object DataBaseManager : AutoCloseable {
         private set
 
     init {
+        DataBaseManager.initialize()
+    }
+
+    fun initialize() {
         initConexion()
         if (Config.databaseInitTables) initTablas()
         if (Config.databaseInitData) initData()

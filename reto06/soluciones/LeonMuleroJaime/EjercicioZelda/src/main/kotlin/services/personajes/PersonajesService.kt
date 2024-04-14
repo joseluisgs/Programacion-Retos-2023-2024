@@ -8,10 +8,10 @@ interface PersonajesService {
     fun loadFromJson(): List<Personaje>
     fun storeToJson(personajes: List<Personaje>)
     fun findAll(): List<Personaje>
-    fun findByName(name: String): Personaje
+    fun findById(id: Int): Personaje
     fun findByTipo(tipo: String): List<Personaje>
     fun save(personaje: Personaje): Personaje
-    fun update(name: String, personaje: Personaje): Personaje
-    fun deleteLogico(name: String): Personaje
-    fun deleteFisico(name: String): Personaje
+    fun update(id: Int, personaje: Personaje): Personaje
+    fun deleteLogico(id: Int): Personaje
+    fun deleteFisico(id: Int): Personaje
 }

@@ -3,6 +3,7 @@ package org.example.models
 import java.time.LocalDate
 
 class Enemigo (
+    id: Int,
     nombre: String,
     habilidad: String,
     ataque: Int,
@@ -12,8 +13,8 @@ class Enemigo (
     updated_at: LocalDate? = LocalDate.now(),
     is_deleted: Boolean? = false
 
-): Personaje(nombre, habilidad, ataque, edad, arma, created_at, updated_at, is_deleted) {
+): Personaje(id, nombre, habilidad, ataque, edad, arma, created_at, updated_at, is_deleted) {
     override fun toString(): String {
-        return "Enemigo(Nombre: $nombre, Habilidad: $habilidad, Puntos de Ataque: $ataque, Edad: $edad, Arma: $arma, Fecha de Creación: $created_at, Fecha de actualización: $updated_at, Borrado Lógico: $is_deleted"
+        return "Enemigo(Id: $id, Nombre: $nombre, Habilidad: $habilidad, Puntos de Ataque: $ataque, Edad: $edad, Arma: $arma, Fecha de Creación: $created_at, Fecha de actualización: $updated_at, Borrado Lógico: $is_deleted"
     }
 }

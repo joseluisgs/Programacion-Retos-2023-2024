@@ -17,10 +17,10 @@ class StoragePersonajesCsv: Storage<Personaje> {
         logger.debug { "Guardando personajes en fichero csv" }
         try {
             val file = Path(Config.storageData, "personajes-back.csv").toFile()
-            file.writeText("Tipo,Nombre,Habilidad,Ataque,Edad,Arma,CreatedAt,UpdatedAt,IsDeleted\n")
+            file.writeText("Id,Tipo,Nombre,Habilidad,Ataque,Edad,Arma,CreatedAt,UpdatedAt,IsDeleted\n")
             data.map { it.toPersonajeDto() }
                 .forEach {
-                    file.appendText("${it.tipo},${it.nombre},${it.habilidad},${it.ataque},${it.edad},${it.arma},${it.created_at},${it.updated_at},${it.is_deleted}\n")
+                    file.appendText("${it.id},${it.tipo},${it.nombre},${it.habilidad},${it.ataque},${it.edad},${it.arma},${it.created_at},${it.updated_at},${it.is_deleted}\n")
                 }
             logger.debug { "Guardado correctamente" }
             return true
@@ -39,12 +39,13 @@ class StoragePersonajesCsv: Storage<Personaje> {
                 .map {
                     val data = it.split(",")
                     PersonajeDto(
-                        tipo = data[0],
-                        nombre = data[1],
-                        habilidad = data[2],
-                        ataque = data[3].toInt(),
-                        edad = data[4].toInt(),
-                        arma = data[5],
+                        id = data[0].toInt(),
+                        tipo = data[1],
+                        nombre = data[2],
+                        habilidad = data[3],
+                        ataque = data[4].toInt(),
+                        edad = data[5].toInt(),
+                        arma = data[6],
                         created_at = LocalDate.now().toString(),
                         updated_at = LocalDate.now().toString(),
                         is_deleted = false
