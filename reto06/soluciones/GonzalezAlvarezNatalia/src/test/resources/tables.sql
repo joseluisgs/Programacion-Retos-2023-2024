@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS personajes(
+    id INTEGER PRIMARY KEY,
+    tipo TEXT NOT NULL,
+    nombre TEXT NOT NULL,
+    habilidad TEXT NOT NULL,
+    ataque TEXT NOT NULL,
+    edad INTEGER NOT NULL,
+    arma TEXT NOT NULL,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    is_deleted INTEGER DEFAULT 0
+);
