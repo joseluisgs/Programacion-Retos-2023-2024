@@ -7,4 +7,5 @@ sealed class PersonajeExceptions(message: String): Exception(message) {
     class PersonajeNotUpdatedException(message: String) : PersonajeExceptions(message)
     class PersonajeNotDeletedException(message: String) : PersonajeExceptions(message)
     class PersonajeNotFetchedException(message: String) : PersonajeExceptions(message)
+    class PersonajeDataException(message: String) : PersonajeExceptions(message)
 }

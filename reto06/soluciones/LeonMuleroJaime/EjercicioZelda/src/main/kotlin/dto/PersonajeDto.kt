@@ -4,6 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class PersonajeDto(
+    val id: Int,
     val tipo:String,
     val nombre:String,
     val habilidad:String,

@@ -47,3 +47,9 @@ H
 data/personajes-back.csv,a\7\a78ac4fefa6f102f889a8a0a7c4992129ebc4067
 I
 data/personajes-back.json,a\c\ac481d51a0bb009f807f7d921e3765052b1d16f8
+_
+/src/test/kotlin/PersonajesRepositoryImplTest.kt,5\5\55252596c1bf651d742813a0257d8e7d07af200e
+`
+0src/main/kotlin/validators/PersonajeValidator.kt,2\3\23a7294a338631dffb8ff0da97f328d59ed0f5c1
+\
+,src/test/kotlin/PersonajesServiceImplTest.kt,c\5\c569a61138db296805da13efefc25c8471ea3618

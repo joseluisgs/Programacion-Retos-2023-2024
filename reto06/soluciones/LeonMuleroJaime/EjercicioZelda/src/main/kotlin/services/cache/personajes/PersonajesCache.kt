@@ -7,26 +7,26 @@ import org.lighthousegames.logging.logging
 
 private val logger = logging()
 
-class PersonajesCache: Cache<Personaje, String> {
-    private val cache: MutableMap<String, Personaje> = mutableMapOf()
+class PersonajesCache: Cache<Personaje, Int> {
+    private val cache: MutableMap<Int, Personaje> = mutableMapOf()
 
-    override fun put(key: String, value: Personaje) {
-        logger.debug { "Guardando personaje en cache llamado $key" }
+    override fun put(key: Int, value: Personaje) {
+        logger.debug { "Guardando personaje en cache con id $key" }
         if (cache.size >= Config.cacheSize && !cache.containsKey(key)) {
             val firstKey = cache.keys.first()
-            logger.debug { "Eliminando personaje en cache llamado ${firstKey} por tamaño lleno" }
+            logger.debug { "Eliminando personaje en cache con id $firstKey por tamaño lleno" }
             cache.remove(firstKey)
         }
         cache[key] = value
     }
 
-    override fun get(key: String): Personaje? {
-        logger.debug { "Obteniendo personaje en cache llamado $key" }
+    override fun get(key: Int): Personaje? {
+        logger.debug { "Obteniendo personaje en cache con id $key" }
         return cache[key]
     }
 
-    override fun remove(key: String): Personaje? {
-        logger.debug { "Eliminando personaje en cache llamado $key" }
+    override fun remove(key: Int): Personaje? {
+        logger.debug { "Eliminando personaje en cache con id $key" }
         return cache.remove(key)
     }
 

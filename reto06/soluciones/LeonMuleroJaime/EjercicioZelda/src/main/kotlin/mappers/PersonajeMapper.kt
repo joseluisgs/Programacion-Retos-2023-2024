@@ -10,6 +10,7 @@ import java.time.LocalDate
 fun PersonajeDto.toPersonaje(): Personaje {
     return when (this.tipo) {
         "Guerrero" -> Guerrero (
+            id = this.id,
             nombre = this.nombre,
             habilidad = this.habilidad,
             ataque = this.ataque,
@@ -20,6 +21,7 @@ fun PersonajeDto.toPersonaje(): Personaje {
             is_deleted = this.is_deleted
         )
         "Enemigo" -> Enemigo (
+            id = this.id,
             nombre = this.nombre,
             habilidad = this.habilidad,
             ataque = this.ataque,
@@ -37,6 +39,7 @@ fun PersonajeDto.toPersonaje(): Personaje {
 fun Personaje.toPersonajeDto():PersonajeDto{
     return when (this) {
         is Guerrero -> PersonajeDto(
+            id = this.id,
             tipo = "Guerrero",
             nombre = this.nombre,
             habilidad = this.habilidad,
@@ -48,6 +51,7 @@ fun Personaje.toPersonajeDto():PersonajeDto{
             is_deleted = this.is_deleted
         )
         is Enemigo -> PersonajeDto(
+            id = this.id,
             tipo = "Enemigo",
             nombre = this.nombre,
             habilidad = this.habilidad,

@@ -1,16 +1,16 @@
-Tipo,Nombre,Habilidad,Ataque,Edad,Arma,CreatedAt,UpdatedAt,IsDeleted
-Guerrero,Link,Maestría con la espada,70,17,Espada Maestra,2024-04-08,2024-04-08,false
-Guerrero,Zelda,Magia de luz,40,20,Báculo de Luz,2024-04-08,2024-04-08,false
-Guerrero,Impa,Sigilo ninja,45,50,Hojas Gemelas Sheikah,2024-04-08,2024-04-08,false
-Guerrero,Mipha,Curación acuática,35,25,Lanza del Dominio Zora,2024-04-08,2024-04-08,false
-Guerrero,Daruk,Resistencia rocosa,55,45,Escudo del Talión,2024-04-08,2024-04-08,false
-Guerrero,Urbosa,Furia del desierto,60,38,Espada de los Segadores,2024-04-08,2024-04-08,false
-Guerrero,Revali,Precisión aérea,70,27,Arco del Valle,2024-04-08,2024-04-08,false
-Guerrero,Sidon,Dominio del agua,50,22,Lanza Zora,2024-04-08,2024-04-08,false
-Enemigo,Ganondorf,Poder oscuro supremo,70,2000,Espada Maldita,2024-04-08,2024-04-08,false
-Enemigo,Bokoblin Rojo,Emboscada furtiva,10,50,Mazo Oxidado,2024-04-08,2024-04-08,false
-Enemigo,Bokoblin Azul,Agilidad esquiva,15,60,Lanza de Hierro,2024-04-08,2024-04-08,false
-Enemigo,Moblin,Fuerza bruta,25,70,Gran Mazo,2024-04-08,2024-04-08,false
-Enemigo,Stalfos,Regeneración ósea,30,200,Espada de Hueso,2024-04-08,2024-04-08,false
-Enemigo,Lynel,Embestida imparable,45,150,Hacha de Guerra Lynel,2024-04-08,2024-04-08,false
-Enemigo,Hinox,Resistencia titánica,60,500,Mazo Gigante,2024-04-08,2024-04-08,false
+Id,Tipo,Nombre,Habilidad,Ataque,Edad,Arma,CreatedAt,UpdatedAt,IsDeleted
+1,Guerrero,Link,Maestría con la espada,70,17,Espada Maestra,2024-04-14,2024-04-14,false
+2,Guerrero,Zelda,Magia de luz,40,20,Báculo de Luz,2024-04-14,2024-04-14,false
+3,Guerrero,Impa,Sigilo ninja,45,50,Hojas Gemelas Sheikah,2024-04-14,2024-04-14,false
+4,Guerrero,Mipha,Curación acuática,35,25,Lanza del Dominio Zora,2024-04-14,2024-04-14,false
+5,Guerrero,Daruk,Resistencia rocosa,55,45,Escudo del Talión,2024-04-14,2024-04-14,false
+6,Guerrero,Urbosa,Furia del desierto,60,38,Espada de los Segadores,2024-04-14,2024-04-14,false
+7,Guerrero,Revali,Precisión aérea,70,27,Arco del Valle,2024-04-14,2024-04-14,false
+8,Guerrero,Sidon,Dominio del agua,50,22,Lanza Zora,2024-04-14,2024-04-14,false
+9,Enemigo,Ganondorf,Poder oscuro supremo,70,2000,Espada Maldita,2024-04-14,2024-04-14,false
+10,Enemigo,Bokoblin Rojo,Emboscada furtiva,10,50,Mazo Oxidado,2024-04-14,2024-04-14,false
+11,Enemigo,Bokoblin Azul,Agilidad esquiva,15,60,Lanza de Hierro,2024-04-14,2024-04-14,false
+12,Enemigo,Moblin,Fuerza bruta,25,70,Gran Mazo,2024-04-14,2024-04-14,false
+13,Enemigo,Stalfos,Regeneración ósea,30,200,Espada de Hueso,2024-04-14,2024-04-14,false
+14,Enemigo,Lynel,Embestida imparable,45,150,Hacha de Guerra Lynel,2024-04-14,2024-04-14,false
+15,Enemigo,Hinox,Resistencia titánica,60,500,Mazo Gigante,2024-04-14,2024-04-14,false
