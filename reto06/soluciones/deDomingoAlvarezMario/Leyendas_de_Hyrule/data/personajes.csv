@@ -1,0 +1,16 @@
+ID,Tipo,Nombre,Habilidad,Ataque,Edad,Arma
+1,Aliado,Link,Maestría con la espada,70,17,Espada Maestra
+2,Aliado,Zelda,Magia de luz,40,20,Báculo de Luz
+3,Aliado,Impa (Guardiana),Sigilo ninja,45,50,Hojas Gemelas Sheikah
+4,Aliado,Mipha,Curación acuática,35,25,Lanza del Dominio Zora
+5,Aliado,Daruk (Campeón Goron),Resistencia rocosa,55,45,Escudo del Talión
+6,Aliado,Urbosa (Campeona Gerudo),Furia del desierto,60,38,Espada de los Segadores
+7,Aliado,Revali (Campeón Rito),Precisión aérea,70,27,Arco del Valle
+8,Aliado,Sidon (Príncipe Zora),Dominio del agua,50,22,Lanza Zora
+9,Enemigo,Ganondorf (Jefe Final),Poder oscuro supremo,70,2000,Espada Maldita
+10,Enemigo,Bokoblin Rojo (Enemigo),Emboscada furtiva,10,50,Mazo Oxidado
+11,Enemigo,Bokoblin Azul (Enemigo),Agilidad esquiva,15,60,Lanza de Hierro
+12,Enemigo,Moblin (Enemigo),Fuerza bruta,25,70,Gran Mazo
+13,Enemigo,Stalfos (Enemigo),Regeneración ósea,30,200,Espada de Hueso
+14,Enemigo,Lynel (Enemigo),Embestida imparable,45,150,Hacha de Guerra Lynel
+15,Enemigo,Hinox (Enemigo),Resistencia titánica,60,500,Mazo Gigante
