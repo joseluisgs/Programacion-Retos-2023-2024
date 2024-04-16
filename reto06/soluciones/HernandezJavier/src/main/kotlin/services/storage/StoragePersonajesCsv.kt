@@ -1,31 +1,40 @@
 package org.example.services.storage
 
+import com.github.michaelbull.result.Err
+import com.github.michaelbull.result.Ok
+import com.github.michaelbull.result.Result
 import org.example.config.Config
 import org.example.dto.PersonajeDto
-import org.example.exceptions.storage.StorageException
+import org.example.exceptions.storage.StorageError
 import org.example.mappers.toPersonaje
 import org.example.mappers.toPersonajeDto
 import org.example.models.Personaje
 import org.lighthousegames.logging.logging
+import java.io.File
 import kotlin.io.path.Path
 
 private val logger = logging()
 class StoragePersonajesCsv: Storage<Personaje> {
-    override fun store(data: List<Personaje>): Boolean {
+    override fun store(data: List<Personaje>): Result<Unit, StorageError> {
         val file= Path(Config.storageData,"personajes-back.csv").toFile()
-        file.writeText("Nombre,Tipo,Habilidad,Ataque,Edad,Arma\n")
-        data.map{it.toPersonajeDto()}.forEach {
-            file.appendText("${it.nombre},${it.tipo},${it.habilidad},${it.ataque},${it.edad},${it.arma}\n")
+        return try {
+            file.writeText("Nombre,Tipo,Habilidad,Ataque,Edad,Arma\n")
+            Ok(data.map{it.toPersonajeDto()}.forEach {
+                file.appendText("${it.nombre},${it.tipo},${it.habilidad},${it.ataque},${it.edad},${it.arma}\n")
+            })
+        }catch (e: Exception){
+            logger.error { "Error al guardar el fichero csv de personajes: ${file.absolutePath}. ${e.message}" }
+            Err(StorageError.StoreError("Error al guardar personajes desde el fichero ${file.absolutePath}. ${e.message}"))
         }
-        return true
+
+
     }
 
-    override fun load(fileName: String): List<Personaje> {
-        try {
-            logger.debug { "Carganado personajes desde fichero Csv" }
-            val file = Path(Config.storageData, fileName).toFile()
-            if(!file.exists()) throw StorageException.LoadException("El fichero $fileName no existe")
-            return file.readLines().drop(1)
+    override fun load(fileName: String): Result<List<Personaje>, StorageError> {
+        logger.debug { "Carganado personajes desde fichero Csv" }
+        val file = Path(Config.storageData, fileName).toFile()
+        return try {
+            Ok( file.readLines().drop(1)
                 .map {
                     val data = it.split(",")
                     PersonajeDto(
@@ -37,10 +46,10 @@ class StoragePersonajesCsv: Storage<Personaje> {
                         arma = data[5],
                         isDeleted = null
                     ).toPersonaje()
-                }
+                })
         }catch (e: Exception){
-            logger.error { "Error al cargar el fichero csv de personajes: ${e.message}" }
-            throw StorageException.LoadException("Error al cargar el fichero csv de personajes: ${e.message}")
+            logger.error { "Error al cargar el fichero csv de personajes: ${file.absolutePath}. ${e.message}" }
+            Err(StorageError.LoadError("Error al cargar personajes desde el fichero ${file.absolutePath}. ${e.message}"))
         }
     }
 

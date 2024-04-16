@@ -5,6 +5,6 @@ interface CrudRepository<T, ID> {
     fun getByName(name: ID): T?
     fun save(item: T): T
     fun update(id: ID, item: T): T?
-    fun delete(id: ID, logical: Boolean): T?
+    fun delete(id: ID): T?
 
 }
