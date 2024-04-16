@@ -1,0 +1,164 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > StoragePersonajesCsvKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.services.storage.personaje</a>
+</div>
+
+<h1>Coverage Summary for Class: StoragePersonajesCsvKt (org.example.services.storage.personaje)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StoragePersonajesCsvKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.services.storage.personaje
+&nbsp;
+&nbsp;import org.example.config.Config
+&nbsp;import org.example.dto.PersonajeDto
+&nbsp;import org.example.exceptions.storage.StorageException
+&nbsp;import org.example.mappers.toPersonaje
+&nbsp;import org.example.mappers.toPersonajeDto
+&nbsp;import org.example.models.Personaje
+&nbsp;import org.example.services.storage.base.Storage
+&nbsp;import org.lighthousegames.logging.logging
+&nbsp;import kotlin.io.path.Path
+&nbsp;
+<b class="nc">&nbsp;private val log = logging()</b>
+&nbsp;
+&nbsp;class StoragePersonajesCsv: Storage&lt;Personaje&gt; {
+&nbsp;    override fun store(data: List&lt;Personaje&gt;,fileName: String): Boolean {
+&nbsp;        log.debug { &quot;Guardando personas en fichero csv&quot; }
+&nbsp;        try {
+&nbsp;            val file = Path(Config.storageDir, fileName).toFile()
+&nbsp;            file.writeText(&quot;id,nombre,tipo,clase,habilidad,ataque,edad,arma,created_at\n&quot;)
+&nbsp;            data.map { it.toPersonajeDto() }
+&nbsp;                .forEach {
+&nbsp;                    file.appendText(&quot;${it.id},${it.nombre},${it.tipo},${it.clase},${it.habilidad},${it.ataque},${it.edad},${it.arma},${it.createdAt}\n&quot;)
+&nbsp;                }
+&nbsp;            log.debug { &quot;Guardado correctamente&quot; }
+&nbsp;            return true
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error al guardar el fichero csv de personajes: ${e.message}&quot; }
+&nbsp;            throw StorageException.StoreException(&quot;Error al guardar el fichero csv de personajes: ${e.message}&quot;)
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun load(fileName: String): List&lt;Personaje&gt; {
+&nbsp;        try {
+&nbsp;            log.debug { &quot;Cargando personajes desde fichero csv&quot; }
+&nbsp;            val file = Path(Config.storageDir, fileName).toFile()
+&nbsp;            if (!file.exists()) throw StorageException.LoadException(&quot;El fichero $fileName no existe&quot;)
+&nbsp;            return file.readLines().drop(1)
+&nbsp;                .map {
+&nbsp;                    val data = it.split(&quot;,&quot;)
+&nbsp;                    PersonajeDto(
+&nbsp;                        id = data[0].toLong(),
+&nbsp;                        nombre = data[1],
+&nbsp;                        tipo = data[2],
+&nbsp;                        clase = data[3],
+&nbsp;                        habilidad = data[4],
+&nbsp;                        ataque = data[5].toInt(),
+&nbsp;                        edad = data[6].toInt(),
+&nbsp;                        arma = data[7],
+&nbsp;                        createdAt = data[8],
+&nbsp;                        updatedAt = null,
+&nbsp;                        isDeleted = null
+&nbsp;                    ).toPersonaje()
+&nbsp;                }
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error al cargar el fichero csv de personas: ${e.message}&quot; }
+&nbsp;            throw StorageException.LoadException(&quot;Error al cargar el fichero csv de personas: ${e.message}&quot;)
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>

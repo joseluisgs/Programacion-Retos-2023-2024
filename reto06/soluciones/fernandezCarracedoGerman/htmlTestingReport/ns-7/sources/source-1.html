@@ -1,0 +1,141 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > PersonajeMapperKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.mappers</a>
+</div>
+
+<h1>Coverage Summary for Class: PersonajeMapperKt (org.example.mappers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PersonajeMapperKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (24/24)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.mappers
+&nbsp;
+&nbsp;import org.example.dto.PersonajeDto
+&nbsp;import org.example.models.Personaje
+&nbsp;import java.time.LocalDate
+&nbsp;
+&nbsp;fun PersonajeDto.toPersonaje():Personaje{
+<b class="fc">&nbsp;    return Personaje(</b>
+<b class="fc">&nbsp;        id = this.id,</b>
+<b class="fc">&nbsp;        nombre = this.nombre,</b>
+<b class="fc">&nbsp;        tipo = this.tipo,</b>
+<b class="fc">&nbsp;        clase = this.clase,</b>
+<b class="fc">&nbsp;        habilidad = this.habilidad,</b>
+<b class="fc">&nbsp;        ataque = this.ataque,</b>
+<b class="fc">&nbsp;        edad = this.edad,</b>
+<b class="fc">&nbsp;        arma = this.arma,</b>
+<b class="fc">&nbsp;        createdAt = LocalDate.parse(this.createdAt),</b>
+<b class="fc">&nbsp;        updatedAt  = this.updatedAt?.let{ LocalDate.parse(it)},</b>
+<b class="fc">&nbsp;        isDeleted = this.isDeleted</b>
+&nbsp;    )
+&nbsp;}
+&nbsp;
+&nbsp;fun Personaje.toPersonajeDto():PersonajeDto{
+<b class="fc">&nbsp;    return PersonajeDto(</b>
+<b class="fc">&nbsp;        id = this.id,</b>
+<b class="fc">&nbsp;        nombre = this.nombre,</b>
+<b class="fc">&nbsp;        tipo = this.tipo,</b>
+<b class="fc">&nbsp;        clase = this.clase,</b>
+<b class="fc">&nbsp;        habilidad = this.habilidad,</b>
+<b class="fc">&nbsp;        ataque = this.ataque,</b>
+<b class="fc">&nbsp;        edad = this.edad,</b>
+<b class="fc">&nbsp;        arma = this.arma,</b>
+<b class="fc">&nbsp;        createdAt = this.createdAt.toString(),</b>
+<b class="fc">&nbsp;        updatedAt  = this.updatedAt?.toString(),</b>
+<b class="fc">&nbsp;        isDeleted = this.isDeleted</b>
+&nbsp;    )
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>

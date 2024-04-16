@@ -1,0 +1,221 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > DataBaseManagerKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.services.database</a>
+</div>
+
+<h1>Coverage Summary for Class: DataBaseManagerKt (org.example.services.database)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DataBaseManagerKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.services.database
+&nbsp;
+&nbsp;import org.apache.ibatis.jdbc.ScriptRunner
+&nbsp;import org.lighthousegames.logging.logging
+&nbsp;import java.io.PrintWriter
+&nbsp;import java.io.Reader
+&nbsp;import java.sql.Connection
+&nbsp;import java.sql.DriverManager
+&nbsp;import org.example.config.Config
+&nbsp;
+<b class="fc">&nbsp;private val log = logging()</b>
+&nbsp;
+&nbsp;object DataBaseInitializer {
+&nbsp;    fun initialize() {
+&nbsp;        // Iniciamos la base de datos
+&nbsp;        initConexion()
+&nbsp;        if (Config.databaseInitTables) {
+&nbsp;            initTablas()
+&nbsp;        }
+&nbsp;        if (Config.databaseInitData) {
+&nbsp;            initData()
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Inicializamos los datos de la base de datos en caso de que se haya configurado
+&nbsp;     */
+&nbsp;    private fun initData() {
+&nbsp;        log.debug { &quot;Iniciando carga de datos&quot; }
+&nbsp;        try {
+&nbsp;            val data = ClassLoader.getSystemResourceAsStream(&quot;data.sql&quot;)?.bufferedReader()!!
+&nbsp;            scriptRunner(data, true)
+&nbsp;            log.debug { &quot;Datos cargados&quot; }
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error al cargar los datos: ${e.message}&quot; }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Inicializamos las tablas de la base de datos en caso de que se haya configurado
+&nbsp;     */
+&nbsp;
+&nbsp;    private fun initTablas() {
+&nbsp;        log.debug { &quot;Creando tablas&quot; }
+&nbsp;        try {
+&nbsp;            val tablas = ClassLoader.getSystemResourceAsStream(&quot;tables.sql&quot;)?.bufferedReader()!!
+&nbsp;            scriptRunner(tablas, true)
+&nbsp;            log.debug { &quot;Tabla personajes creada&quot; }
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error al crear las tablas: ${e.message}&quot; }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Inicializamos la conexión con la base de datos
+&nbsp;     */
+&nbsp;
+&nbsp;    private fun initConexion() {
+&nbsp;        // Inicializamos la base de datos
+&nbsp;        log.debug { &quot;Iniciando conexión con la base de datos&quot; }
+&nbsp;        try {
+&nbsp;            DriverManager.getConnection(Config.databaseUrl)
+&nbsp;        } catch (e:Exception) {
+&nbsp;            log.error { &quot;Error al conectar con la base de datos: ${e.message}&quot; }
+&nbsp;        }
+&nbsp;
+&nbsp;        log.debug { &quot;Conexión con la base de datos inicializada&quot; }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Función para ejecutar un script SQL en la base de datos
+&nbsp;     */
+&nbsp;    private fun scriptRunner(reader: Reader, logWriter: Boolean = false) {
+&nbsp;        log.debug { &quot;Ejecutando script SQL con log: $logWriter&quot; }
+&nbsp;        val connection = DriverManager.getConnection(Config.databaseUrl)
+&nbsp;        val sr = ScriptRunner(connection)
+&nbsp;        sr.setLogWriter(if (logWriter) PrintWriter(System.out) else null)
+&nbsp;        sr.runScript(reader)
+&nbsp;    }
+&nbsp;
+&nbsp;}
+&nbsp;object DataBaseManager : AutoCloseable {
+&nbsp;    var connection: Connection? = null
+&nbsp;        private set
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Inicializamos la base de datos
+&nbsp;     */
+&nbsp;    init {
+&nbsp;        DataBaseInitializer.initialize()
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Cerramos la conexión con la base de datos
+&nbsp;     */
+&nbsp;    override fun close() {
+&nbsp;        log.debug { &quot;Cerrando conexión con la base de datos&quot; }
+&nbsp;        connection?.close()
+&nbsp;        log.debug { &quot;Conexión con la base de datos cerrada&quot; }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Función para usar la base de datos y cerrarla al finalizar la operación
+&nbsp;     */
+&nbsp;
+&nbsp;    fun &lt;T&gt; use(block: (Connection) -&gt; T) {
+&nbsp;        try {
+&nbsp;            connection = DriverManager.getConnection(Config.databaseUrl)
+&nbsp;            block(connection!!)
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error en la base de datos: ${e.message}&quot; }
+&nbsp;            throw e
+&nbsp;        } finally {
+&nbsp;            close()
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>

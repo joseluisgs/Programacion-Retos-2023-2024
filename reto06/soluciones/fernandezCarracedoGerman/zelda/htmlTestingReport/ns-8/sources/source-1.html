@@ -1,0 +1,127 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Personaje</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.models</a>
+</div>
+
+<h1>Coverage Summary for Class: Personaje (org.example.models)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Personaje</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (15/15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.models
+&nbsp;
+&nbsp;import java.time.LocalDate
+&nbsp;
+<b class="fc">&nbsp;data class Personaje (</b>
+<b class="fc">&nbsp;    val id: Long = -1,</b>
+<b class="fc">&nbsp;    val nombre: String,</b>
+<b class="fc">&nbsp;    val tipo: String,</b>
+<b class="fc">&nbsp;    val clase: String,</b>
+<b class="fc">&nbsp;    val habilidad: String,</b>
+<b class="fc">&nbsp;    val ataque: Int,</b>
+<b class="fc">&nbsp;    val edad: Int,</b>
+<b class="fc">&nbsp;    val arma: String,</b>
+<b class="fc">&nbsp;    val createdAt: LocalDate = LocalDate.now(),</b>
+<b class="fc">&nbsp;    val updatedAt: LocalDate?=LocalDate.now(),</b>
+<b class="fc">&nbsp;    val isDeleted: Boolean? = false</b>
+&nbsp;){
+&nbsp;    override fun toString(): String {
+<b class="fc">&nbsp;        return &quot;Personaje (id=$id, \tnombre=$nombre, $tipo${if (this.clase!=&quot;&quot;) &quot; - &quot; + this.clase else &quot;&quot;}, &quot;+</b>
+<b class="fc">&nbsp;                &quot;H=$habilidad, A=$ataque, E=$edad, AR=$arma, &quot;+</b>
+<b class="fc">&nbsp;                &quot;createdAt=$createdAt, updatedAt=$updatedAt, isDeleted=$isDeleted)&quot;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>
