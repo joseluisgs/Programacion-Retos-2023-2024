@@ -21,7 +21,11 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.4.14")
     // Para cargar scrips de la base de datos
     implementation("org.mybatis:mybatis:3.5.13")
+    // Para ROP
+    implementation("com.michael-bull.kotlin-result:kotlin-result:2.0.0")
+
     testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("io.mockk:mockk:1.13.10")
 }
 
 tasks.test {

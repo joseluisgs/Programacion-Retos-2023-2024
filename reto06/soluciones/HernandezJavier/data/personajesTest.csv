@@ -1,0 +1,5 @@
+Tipo,Nombre,Habilidad,Ataque,Edad,Arma
+Guerrero,PersonajeTest1,PersonajeExtra,10,30,Extra1
+Guerrero,PersonajeTest2,PersonajeExtra,10,20,Extra2
+Enemigo,PersonajeTest3,PersonajeExtra,10,30,Extra3
+Enemigo,PersonajeTest4,PersonajeExtra,10,40,Extra4
