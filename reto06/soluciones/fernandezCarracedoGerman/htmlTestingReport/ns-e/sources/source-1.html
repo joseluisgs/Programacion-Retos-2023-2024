@@ -1,0 +1,173 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > PersonajesValidator</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.validators.personaje</a>
+</div>
+
+<h1>Coverage Summary for Class: PersonajesValidator (org.example.validators.personaje)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PersonajesValidator</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.validators.personaje
+&nbsp;
+&nbsp;import org.example.exceptions.personajes.PersonajesException
+&nbsp;import org.example.models.Personaje
+&nbsp;
+<b class="fc">&nbsp;class PersonajesValidator {</b>
+&nbsp;
+&nbsp;    fun validate(personaje: Personaje){
+&nbsp;
+&nbsp;    //validateId(personaje.id)
+<b class="fc">&nbsp;    validateNombre(personaje.nombre)</b>
+<b class="fc">&nbsp;    validateTipo(personaje.tipo)</b>
+<b class="fc">&nbsp;    validateClase(personaje.clase)</b>
+<b class="fc">&nbsp;    validateHabilidad(personaje.habilidad)</b>
+<b class="fc">&nbsp;    validateAtaque(personaje.ataque)</b>
+<b class="fc">&nbsp;    validateEdad(personaje.edad)</b>
+<b class="fc">&nbsp;    validateArma(personaje.arma)</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun validateHabilidad(habilidad: String) {
+<b class="fc">&nbsp;        if (habilidad.length&lt;5 || habilidad.length&gt;50){</b>
+<b class="fc">&nbsp;            throw PersonajesException.PersonajeNotValid(&quot;La habilidad del personaje no es válida, debe tener entre 5 y 50 caracteres&quot;)</b>
+&nbsp;        }
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun validateArma(arma: String) {
+<b class="fc">&nbsp;        if (arma.length &lt; 4 || arma.length &gt; 50) {</b>
+<b class="fc">&nbsp;            throw PersonajesException.PersonajeNotValid(&quot;El arma del personaje no es válida, debe tener entre 4 y 50 caracteres&quot;)</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun validateEdad(edad: Int) {
+<b class="fc">&nbsp;        if (edad &lt; 1 || edad &gt; 5000) {</b>
+<b class="fc">&nbsp;            throw PersonajesException.PersonajeNotValid(&quot;La edad del personaje no es válida, debe tener entre 1 y 5000 años&quot;)</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun validateAtaque(ataque: Int) {
+<b class="fc">&nbsp;        if (ataque &lt; 1 || ataque &gt;= Int.MAX_VALUE)</b>
+<b class="fc">&nbsp;            throw PersonajesException.PersonajeNotValid(&quot;El ataque del personaje no es válido, debe estar entre 1 y ${Int.MAX_VALUE}&quot;)</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun validateClase(clase: String) {
+<b class="fc">&nbsp;        if (clase!=&quot;&quot; &amp;&amp; (clase.length &lt; 4 || clase.length &gt; 40)) {</b>
+<b class="fc">&nbsp;            throw PersonajesException.PersonajeNotValid(&quot;La clase del personaje no es válida, debe ser vacía o si no, tener entre 4 y 40 caracteres&quot;)</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun validateTipo(tipo: String) {
+<b class="fc">&nbsp;        if (tipo != &quot;Guerrero&quot; &amp;&amp; tipo != &quot;Enemigo&quot;) {</b>
+<b class="fc">&nbsp;            throw PersonajesException.PersonajeNotValid(&quot;El tipo del personaje no es válido, solo puede ser &#39;Guerrero&#39; o &#39;Enemigo&#39;&quot;)</b>
+&nbsp;        }
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun validateNombre(nombre: String) {
+<b class="fc">&nbsp;        if (nombre.length &lt; 4 || nombre.length &gt; 50) {</b>
+<b class="fc">&nbsp;            throw PersonajesException.PersonajeNotValid(&quot;El nombre del personaje no es válido, debe tener entre 4 y 50 caracteres&quot;)</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;/*    private fun validateId(id: Long) {
+&nbsp;        if (id &lt; 1) {
+&nbsp;            throw PersonajesException.PersonajeNotValid(&quot;Id del personaje no válido, debe ser mayor que 0&quot;)
+&nbsp;        }
+&nbsp;
+&nbsp;    }*/
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>

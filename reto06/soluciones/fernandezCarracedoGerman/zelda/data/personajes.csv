@@ -1,0 +1,16 @@
+id,nombre,tipo,clase,habilidad,ataque,edad,arma,created_at
+1,Link,Guerrero,,Maestría con la espada,70,17,Espada Maestra,2024-04-06
+2,Zelda,Guerrero,,Magia de luz,40,20,Báculo de Luz,2024-04-06
+3,Impa,Guerrero,Guardiana,Sigilo ninja,45,50,Hojas Gemelas Sheikah,2024-04-06
+4,Mipha,Guerrero,Aliada,Curación acuática,35,25,Lanza del Dominio Zora,2024-04-06
+5,Daruk,Guerrero,Campeón Goron,Resistencia rocosa,55,45,Escudo del Talión,2024-04-06
+6,Urbosa,Guerrero,Campeona Gerudo,Furia del desierto,60,38,Espada de los Segadores,2024-04-06
+7,Revali,Guerrero,Campeón Rito,Precisión aérea,70,27,Arco del Valle,2024-04-06
+8,Sidon,Guerrero,Príncipe Zora,Dominio del agua,50,22,Lanza Zora,2024-04-06
+9,Ganondorf,Enemigo,Jefe Final,Poder oscuro supremo,70,2000,Espada Maldita,2024-04-06
+10,Bokoblin Rojo,Enemigo,,Emboscada furtiva,10,50,Mazo Oxidado,2024-04-06
+11,Bokoblin Azul,Enemigo,,Agilidad esquiva,15,60,Lanza de Hierro,2024-04-06
+12,Moblin,Enemigo,,Fuerza bruta,25,70,Gran Mazo,2024-04-06
+13,Stalfos,Enemigo,,Regeneración ósea,30,200,Espada de Hueso,2024-04-06
+14,Lynel,Enemigo,,Embestida imparable,45,150,Hacha de Guerra Lynel,2024-04-06
+15,Hinox,Enemigo,,Resistencia titánica,60,500,Mazo Gigante,2024-04-06

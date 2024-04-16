@@ -1,0 +1,494 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > MainKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: MainKt (org.example)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MainKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/281)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">MainKt$mostrarConsultas$$inlined$sortedByDescending$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainKt$mostrarConsultas$$inlined$sortedByDescending$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">MainKt$mostrarConsultas$$inlined$sortedByDescending$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/287)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example
+&nbsp;
+&nbsp;import org.example.cache.CacheImpl
+&nbsp;import org.example.config.Config
+&nbsp;import org.example.models.Personaje
+&nbsp;import org.example.repositories.personaje.PersonajeRepositoryImpl
+&nbsp;import org.example.services.personaje.PersonajesServiceImpl
+&nbsp;import org.example.services.storage.personaje.StoragePersonajesCsv
+&nbsp;import org.example.services.storage.personaje.StoragePersonajesJson
+&nbsp;import org.example.validators.personaje.PersonajesValidator
+&nbsp;import org.lighthousegames.logging.logging
+&nbsp;import java.time.LocalDate
+&nbsp;
+&nbsp;/**
+&nbsp; * Leyendas de Hyrule: El Repositorio de Personajes
+&nbsp; * @author Germán Fernández Carracedo
+&nbsp; * @since 1.0
+&nbsp; */
+<b class="nc">&nbsp;private val log = logging()</b>
+<b class="nc">&nbsp;private var personajes: List&lt;Personaje&gt; = emptyList()</b>
+<b class="nc">&nbsp;private val personajesService = PersonajesServiceImpl(</b>
+<b class="nc">&nbsp;    repository = PersonajeRepositoryImpl(),</b>
+<b class="nc">&nbsp;    storageCsv = StoragePersonajesCsv(),</b>
+<b class="nc">&nbsp;    storageJson = StoragePersonajesJson(),</b>
+<b class="nc">&nbsp;    cache = CacheImpl(),</b>
+<b class="nc">&nbsp;    validator = PersonajesValidator()</b>
+&nbsp;)
+&nbsp;
+&nbsp;fun main() {
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;    var opcion: Int = 0</b>
+&nbsp;
+&nbsp;    do{
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;#############################################################&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;## Zelda: Leyendas de Hyrule: El Repositorio de Personajes ##&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;#############################################################&quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;        println(&quot;1. Importar datos desde fichero&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;2. Exportar datos a fichero&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;3. Mostrar todos los personajes de la Base de Datos&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;4. Ejemplos operaciones sobre la Base de datos&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;5. Consultas&quot;)</b>
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;0. Salir&quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        print(&quot;Introduzca una opción: &quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;        opcion= readln().toIntOrNull() ?: -1</b>
+&nbsp;
+<b class="nc">&nbsp;        when (opcion){</b>
+<b class="nc">&nbsp;            1-&gt; mostrarSubMenuImportacion()</b>
+<b class="nc">&nbsp;            2-&gt; mostrarSubMenuExportacion()</b>
+<b class="nc">&nbsp;            3-&gt; mostrarPersonajesBD()</b>
+<b class="nc">&nbsp;            4-&gt; mostrarEjemplosOperacionesRepo()</b>
+<b class="nc">&nbsp;            5-&gt; mostrarConsultas()</b>
+<b class="nc">&nbsp;            0-&gt; despedida()</b>
+<b class="nc">&nbsp;            else-&gt; println(&quot;Opción no válida&quot;)</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;    } while (opcion != 0)</b>
+&nbsp;
+&nbsp;}
+&nbsp;
+&nbsp;/**
+&nbsp; * Muestra mensaje de despedida
+&nbsp; */
+&nbsp;fun despedida() {
+<b class="nc">&nbsp;    println(&quot;Muchas gracias por visitar nuestro Registro&quot;)</b>
+&nbsp;}
+&nbsp;
+&nbsp;fun mostrarConsultas() {
+<b class="nc">&nbsp;    var personajes = personajesService.findAll()</b>
+<b class="nc">&nbsp;    if (personajes.isEmpty()) {</b>
+<b class="nc">&nbsp;        println(&quot;La base de datos está vacía, no se puede consultar ningún dato&quot;)</b>
+&nbsp;    } else {
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;Consultas sobre la lista de personajes obtenida de la base de datos&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;Tres personajes más mayores:&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        personajes.sortedByDescending { it.edad }</b>
+<b class="nc">&nbsp;            .take(3)</b>
+<b class="nc">&nbsp;            .forEach { println(it) }</b>
+&nbsp;
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;Agrupar personajes por tipo de arma&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        personajes.groupBy { it.tipo }</b>
+<b class="nc">&nbsp;            .forEach{ println(&quot;${it.key} -&gt; \n${it.value} \n&quot;)}</b>
+&nbsp;
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;Personajes menores de edad&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        personajes.filter { it.edad&lt;21 }</b>
+<b class="nc">&nbsp;            .forEach { println (it) }</b>
+&nbsp;
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;Personajes con más ataque&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        personajes.sortedByDescending { it.ataque }</b>
+<b class="nc">&nbsp;            .take(5)</b>
+<b class="nc">&nbsp;            .forEach { println(it) }</b>
+&nbsp;
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;Mostrar a todos los enemigos&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        personajes.filter { it.tipo == &quot;Enemigo&quot; }</b>
+<b class="nc">&nbsp;            .forEach { println(it) }</b>
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;Dos personajes con el ataque más fuerte&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        personajes.sortedByDescending { it.ataque }</b>
+<b class="nc">&nbsp;            .take(2)</b>
+<b class="nc">&nbsp;            .forEach { println(it) }</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;
+&nbsp;fun mostrarEjemplosOperacionesRepo() {
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Ejemplos de operaciones con el repositorio&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Guardando personaje de ejemplo&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;    val personajeEjemplo=personajesService.save(Personaje(</b>
+<b class="nc">&nbsp;        nombre=&quot;Nombre Ejemplo&quot;,</b>
+<b class="nc">&nbsp;        tipo=&quot;Guerrero&quot;,</b>
+<b class="nc">&nbsp;        clase=&quot;Clase Ejemplo&quot;,</b>
+<b class="nc">&nbsp;        habilidad=&quot;Habilidad Ejemplo&quot;,</b>
+<b class="nc">&nbsp;        ataque = 50,</b>
+<b class="nc">&nbsp;        edad = 100,</b>
+<b class="nc">&nbsp;        arma=&quot;Arma Ejemplo&quot;,</b>
+<b class="nc">&nbsp;        createdAt =LocalDate.now(),</b>
+<b class="nc">&nbsp;        updatedAt = LocalDate.now(),</b>
+<b class="nc">&nbsp;        isDeleted = false</b>
+&nbsp;    ))
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println (personajeEjemplo)</b>
+&nbsp;
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Modificando personaje de ejemplo&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Original: $personajeEjemplo&quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;    println(&quot;Modificado: ${personajesService.update(personajeEjemplo.id,personajeEjemplo.copy(</b>
+<b class="nc">&nbsp;        clase=&quot;Clase Modificada&quot;, </b>
+<b class="nc">&nbsp;        edad=1000,</b>
+<b class="nc">&nbsp;        arma = &quot;Arma Modificada&quot;))}&quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Eliminando personaje de ejemplo (borrado lógico)&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    personajesService.delete(personajeEjemplo.id,true)</b>
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Mostrando personaje eliminado (borrado lógico)&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Eliminado: ${personajesService.findById(personajeEjemplo.id)}&quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Eliminando personaje de ejemplo (borrado físico)&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    personajesService.delete(personajeEjemplo.id,false)</b>
+&nbsp;
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Mostrando personajes por tipo \&quot;Guerrero\&quot; (consulta a BD)&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    var personajes = personajesService.findByType(&quot;Guerrero&quot;)</b>
+<b class="nc">&nbsp;    if (personajes.size &gt; 0) {</b>
+<b class="nc">&nbsp;        personajes.forEach { println(it) }</b>
+<b class="nc">&nbsp;    } else { println (&quot;No se ha encontrado ningún personaje del tipo elegido&quot;) }</b>
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Mostrando personajes por tipo \&quot;Enemigo\&quot; (consulta a BD)&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    personajes = personajesService.findByType(&quot;Enemigo&quot;)</b>
+<b class="nc">&nbsp;    if (personajes.size &gt; 0) {</b>
+<b class="nc">&nbsp;        personajes.forEach { println(it) }</b>
+<b class="nc">&nbsp;    } else { println (&quot;No se ha encontrado ningún personaje del tipo elegido&quot;) }</b>
+&nbsp;
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Mostrando personajes por tipo \&quot;Otro\&quot; (consulta a BD)&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    personajes = personajesService.findByType(&quot;Otro&quot;)</b>
+<b class="nc">&nbsp;    if (personajes.size &gt; 0) {</b>
+<b class="nc">&nbsp;        personajes.forEach { println(it) }</b>
+<b class="nc">&nbsp;    } else { println (&quot;No se ha encontrado ningún personaje del tipo elegido&quot;) }</b>
+&nbsp;}
+&nbsp;
+&nbsp;fun mostrarSubMenuExportacion() {
+&nbsp;    do {
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;Exportar datos de la BD a fichero&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;============================&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;1. Exportar a CSV: ${Config.storageFileExportCsv}&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;2. Exportar a JSON: ${Config.storageFileExportJson}&quot;)</b>
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;0. Volver &quot;)</b>
+<b class="nc">&nbsp;        print(&quot;\nSeleccione opción: &quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;        val opcion = readln().toIntOrNull()?:-1</b>
+<b class="nc">&nbsp;        when (opcion) {</b>
+<b class="nc">&nbsp;            1-&gt; exportarACsv()</b>
+<b class="nc">&nbsp;            2-&gt; exportarAJson()</b>
+&nbsp;        }
+<b class="nc">&nbsp;    } while (opcion!= 0)</b>
+&nbsp;}
+&nbsp;
+&nbsp;fun exportarAJson() {
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Exportando datos de personajes a fichero JSON ${Config.storageFileExportJson}&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    personajes = personajesService.findAll()</b>
+<b class="nc">&nbsp;    if (personajes.size&gt;0) {</b>
+<b class="nc">&nbsp;        personajesService.storeToJson(personajes, Config.storageFileExportJson)</b>
+&nbsp;    } else {
+<b class="nc">&nbsp;        println(&quot;Error, no se puede exportar porque la base de datos está vacía&quot;)</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;fun exportarACsv() {
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;Exportando datos de personajes a fichero CSV ${Config.storageFileExportCsv}&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    personajes = personajesService.findAll()</b>
+<b class="nc">&nbsp;    if (personajes.size&gt;0) {</b>
+<b class="nc">&nbsp;        personajesService.storeToCsv(personajes, Config.storageFileExportCsv)</b>
+&nbsp;    } else {
+<b class="nc">&nbsp;        println(&quot;Error, no se puede exportar porque la base de datos está vacía&quot;)</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;fun mostrarSubMenuImportacion (){
+&nbsp;    do {
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;Importar datos desde fichero&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;============================&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;1. Desde CSV: ${Config.storageFileImportCsv}&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;2. Desde JSON: ${Config.storageFileImportJson}&quot;)</b>
+<b class="nc">&nbsp;        println()</b>
+<b class="nc">&nbsp;        println(&quot;0. Volver &quot;)</b>
+<b class="nc">&nbsp;        print(&quot;\nSeleccione opción: &quot;)</b>
+&nbsp;
+<b class="nc">&nbsp;        val opcion = readln().toIntOrNull()?:-1</b>
+<b class="nc">&nbsp;        when (opcion) {</b>
+<b class="nc">&nbsp;            1-&gt; importarDesdeCsv()</b>
+<b class="nc">&nbsp;            2-&gt; importarDesdeJson()</b>
+&nbsp;        }
+<b class="nc">&nbsp;    } while (opcion!= 0)</b>
+&nbsp;}
+&nbsp;
+&nbsp;
+&nbsp;private fun importarDesdeCsv() {
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;1. Importando datos de personajes desde fichero CSV ${Config.storageFileImportCsv}&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    personajes = personajesService.loadFromCsv(Config.storageFileImportCsv)</b>
+<b class="nc">&nbsp;    log.debug { &quot;Personajes importados a lista de personajes&quot; }</b>
+<b class="nc">&nbsp;    personajes.forEach { println(it) }</b>
+&nbsp;
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;2. Guardando personajes en la Base de Datos&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################&quot;)</b>
+<b class="nc">&nbsp;    personajes.forEach {</b>
+<b class="nc">&nbsp;        personajesService.save(it)</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;}
+&nbsp;
+&nbsp;private fun importarDesdeJson(){
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;1. Importando datos de personajes desde fichero JSON ${Config.storageFileImportJson}&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################################################&quot;)</b>
+<b class="nc">&nbsp;    personajes = personajesService.loadFromJson(Config.storageFileImportJson)</b>
+<b class="nc">&nbsp;    log.debug { &quot;Personajes importados a lista de personajes&quot; }</b>
+<b class="nc">&nbsp;    personajes.forEach { println(it) }</b>
+&nbsp;
+<b class="nc">&nbsp;    println(&quot;############################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;2. Guardando personajes en la Base de Datos&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;############################################&quot;)</b>
+<b class="nc">&nbsp;    personajes.forEach {</b>
+<b class="nc">&nbsp;        personajesService.save(it)</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;}
+&nbsp;
+&nbsp;private fun mostrarPersonajesBD() {
+<b class="nc">&nbsp;    println()</b>
+<b class="nc">&nbsp;    println(&quot;######################################################&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;3. Mostrando todos los personajes de la Base de Datos&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;######################################################&quot;)</b>
+<b class="nc">&nbsp;    val personajes = personajesService.findAll()</b>
+<b class="nc">&nbsp;        if (personajesService.findAll().size&gt;0) {</b>
+<b class="nc">&nbsp;            personajes.forEach { println(it) }</b>
+&nbsp;        } else {
+<b class="nc">&nbsp;            println(&quot;La base de datos está vacía&quot;)</b>
+&nbsp;        }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>

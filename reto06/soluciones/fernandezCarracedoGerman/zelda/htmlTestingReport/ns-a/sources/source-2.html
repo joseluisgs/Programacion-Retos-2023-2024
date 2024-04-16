@@ -1,0 +1,335 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > PersonajeRepositoryImplKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.repositories.personaje</a>
+</div>
+
+<h1>Coverage Summary for Class: PersonajeRepositoryImplKt (org.example.repositories.personaje)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PersonajeRepositoryImplKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.repositories.personaje
+&nbsp;
+&nbsp;import org.example.dto.PersonajeDto
+&nbsp;import org.example.exceptions.personajes.PersonajesException
+&nbsp;import org.example.mappers.toPersonaje
+&nbsp;import org.example.mappers.toPersonajeDto
+&nbsp;import org.example.models.Personaje
+&nbsp;import org.example.services.database.DataBaseManager
+&nbsp;import org.lighthousegames.logging.logging
+&nbsp;import java.sql.Statement.RETURN_GENERATED_KEYS
+&nbsp;import java.time.LocalDate
+&nbsp;
+<b class="fc">&nbsp;private val log = logging()</b>
+&nbsp;
+&nbsp;class PersonajeRepositoryImpl: PersonajeRepository {
+&nbsp;
+&nbsp;    /*init {
+&nbsp;        DataBaseManager.use {  }
+&nbsp;    }
+&nbsp;*/
+&nbsp;    override fun findAll(): List&lt;Personaje&gt; {
+&nbsp;        log.debug { &quot;Buscando todos los personajes&quot; }
+&nbsp;        try {
+&nbsp;            val personajes = mutableListOf&lt;Personaje&gt;()
+&nbsp;            DataBaseManager.use { db -&gt;
+&nbsp;                val sql = &quot;SELECT * FROM personajes&quot;
+&nbsp;                val result = db.prepareStatement(sql)!!.executeQuery()
+&nbsp;                while (result.next()) {
+&nbsp;                    val personaje = PersonajeDto(
+&nbsp;                        id = result.getLong(&quot;id&quot;),
+&nbsp;                        nombre = result.getString(&quot;nombre&quot;),
+&nbsp;                        tipo = result.getString(&quot;tipo&quot;),
+&nbsp;                        clase = result.getString(&quot;clase&quot;),
+&nbsp;                        habilidad = result.getString(&quot;habilidad&quot;),
+&nbsp;                        ataque = result.getInt(&quot;ataque&quot;),
+&nbsp;                        edad = result.getInt(&quot;edad&quot;),
+&nbsp;                        arma = result.getString(&quot;arma&quot;),
+&nbsp;                        createdAt = result.getString(&quot;created_at&quot;),
+&nbsp;                        updatedAt = result.getString(&quot;updated_at&quot;),
+&nbsp;                        isDeleted = result.getBoolean(&quot;is_deleted&quot;)
+&nbsp;                    ).toPersonaje()
+&nbsp;                    personajes.add(personaje)
+&nbsp;                }
+&nbsp;            }
+&nbsp;            return personajes
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error al buscar todos las personajes&quot; }
+&nbsp;            throw PersonajesException.PersonajeNotFetchedException(&quot;Error al buscar todos las personajes&quot;)
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun findById(id: Long): Personaje? {
+&nbsp;
+&nbsp;        log.debug{ &quot;Recuperando personaje por id $id&quot;}
+&nbsp;        try{
+&nbsp;            var personaje:Personaje? = null
+&nbsp;            DataBaseManager.use { db -&gt;
+&nbsp;                val sql = &quot;SELECT * FROM Personajes WHERE id = ?&quot;
+&nbsp;                val statement = db.prepareStatement(sql)!!
+&nbsp;                statement.setLong(1, id)
+&nbsp;                val result = statement.executeQuery()
+&nbsp;                if (result.next()) {
+&nbsp;                    personaje = PersonajeDto(
+&nbsp;                        id = result.getLong(&quot;id&quot;),
+&nbsp;                        nombre = result.getString(&quot;nombre&quot;),
+&nbsp;                        tipo = result.getString(&quot;tipo&quot;),
+&nbsp;                        clase = result.getString(&quot;clase&quot;),
+&nbsp;                        habilidad = result.getString(&quot;habilidad&quot;),
+&nbsp;                        ataque = result.getInt(&quot;ataque&quot;),
+&nbsp;                        edad = result.getInt(&quot;edad&quot;),
+&nbsp;                        arma = result.getString(&quot;arma&quot;),
+&nbsp;                        createdAt = result.getString(&quot;created_at&quot;),
+&nbsp;                        updatedAt = result.getString(&quot;updated_at&quot;),
+&nbsp;                        isDeleted = result.getBoolean(&quot;is_deleted&quot;)
+&nbsp;                    ).toPersonaje()
+&nbsp;                }
+&nbsp;            }
+&nbsp;
+&nbsp;            return personaje
+&nbsp;
+&nbsp;        } catch (e:Exception) {
+&nbsp;            log.error { &quot;Error al buscar personaje por id $id&quot; }
+&nbsp;            throw PersonajesException.PersonajeNotFound(&quot;Error al buscar personaje por id $id&quot;)
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun save(item: Personaje): Personaje {
+&nbsp;        log.debug { &quot;Guardando personaje $item &quot; }
+&nbsp;        try {
+&nbsp;            var personaje: PersonajeDto = item.toPersonajeDto()
+&nbsp;            val timeStamp = LocalDate.now()
+&nbsp;            DataBaseManager.use { db-&gt;
+&nbsp;                val sql = &quot;INSERT INTO Personajes (nombre,tipo,clase,habilidad,ataque,edad,arma,created_at,updated_at,is_deleted)&quot; +
+&nbsp;                        &quot; VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)&quot;
+&nbsp;                val statement = db.prepareStatement(sql, RETURN_GENERATED_KEYS)!!
+&nbsp;                with (statement){
+&nbsp;                    setString(1,personaje.nombre)
+&nbsp;                    setString(2,personaje.tipo)
+&nbsp;                    setString(3,personaje.clase)
+&nbsp;                    setString(4,personaje.habilidad)
+&nbsp;                    setInt(5,personaje.ataque)
+&nbsp;                    setInt(6,personaje.edad)
+&nbsp;                    setString(7,personaje.arma)
+&nbsp;                    setString(8,timeStamp.toString())
+&nbsp;                    setString(9,timeStamp.toString())
+&nbsp;                    setBoolean(10,false)
+&nbsp;                    executeUpdate()
+&nbsp;                }
+&nbsp;                val id = statement.generatedKeys.getLong(1)
+&nbsp;                personaje = personaje.copy(
+&nbsp;                    id=id,
+&nbsp;                    createdAt = timeStamp.toString(),
+&nbsp;                    updatedAt = timeStamp.toString(),
+&nbsp;                    isDeleted = false
+&nbsp;                )
+&nbsp;
+&nbsp;            }
+&nbsp;            return personaje.toPersonaje()
+&nbsp;
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error al guardar personaje $item&quot; }
+&nbsp;            throw PersonajesException.PersonajeNotSavedException (&quot;Error al guardar personaje $item&quot;)
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun update(id: Long, item: Personaje): Personaje? {
+&nbsp;        log.debug { &quot;Actualizando personaje $item&quot; }
+&nbsp;        try {
+&nbsp;            var personaje: PersonajeDto? = this.findById(id)?.toPersonajeDto()
+&nbsp;            if (personaje != null) {
+&nbsp;                personaje = item.toPersonajeDto()
+&nbsp;                val timeStamp = LocalDate.now()
+&nbsp;                DataBaseManager.use { db -&gt;
+&nbsp;                    val sql =
+&nbsp;                        //nombre,tipo,clase,habilidad,ataque,edad,arma,created_at,updated_at,is_deleted
+&nbsp;                        &quot;UPDATE personajes SET nombre = ?, tipo = ?, clase = ?, habilidad = ?, ataque = ?, edad = ?, &quot; +
+&nbsp;                                &quot;arma = ?, updated_at = ? WHERE id = ?&quot;
+&nbsp;                    val statement = db.prepareStatement(sql)!!
+&nbsp;                    with(statement) {
+&nbsp;                        setString(1, personaje?.nombre)
+&nbsp;                        setString(2, personaje?.tipo)
+&nbsp;                        setString(3, personaje?.clase)
+&nbsp;                        setString(4, personaje?.habilidad)
+&nbsp;                        setObject(5, personaje?.ataque)
+&nbsp;                        setObject(6, personaje?.edad)
+&nbsp;                        setString(7, personaje?.arma)
+&nbsp;                        setString(8, timeStamp.toString())
+&nbsp;                        setLong(9, id)
+&nbsp;                        executeUpdate()
+&nbsp;                    }
+&nbsp;                    personaje = personaje?.copy(
+&nbsp;                        updatedAt = timeStamp.toString()
+&nbsp;                    )
+&nbsp;                }
+&nbsp;            }
+&nbsp;            return personaje?.toPersonaje()
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error al actualizar personaje $item&quot; }
+&nbsp;            throw PersonajesException.PersonajeNotUpdatedException(&quot;Error al actualizar personaje $item&quot;)
+&nbsp;        }    }
+&nbsp;
+&nbsp;    override fun delete(id: Long, logical: Boolean): Personaje? {
+&nbsp;        log.debug { &quot;Borrando personaje con id $id&quot; }
+&nbsp;        try {
+&nbsp;            var personaje: PersonajeDto? = this.findById(id)?.toPersonajeDto()
+&nbsp;            if (personaje != null) {
+&nbsp;                DataBaseManager.use { db -&gt;
+&nbsp;                    // Borramos logico
+&nbsp;                    if (logical) {
+&nbsp;                        val sql = &quot;UPDATE personajes SET is_deleted = ? WHERE id = ?&quot;
+&nbsp;                        val statement = db.prepareStatement(sql)!!
+&nbsp;                        statement.setBoolean(1, true)
+&nbsp;                        statement.setLong(2, id)
+&nbsp;                        statement.executeUpdate()
+&nbsp;                        personaje = personaje?.copy(
+&nbsp;                            isDeleted = true
+&nbsp;                        )
+&nbsp;                    } else {
+&nbsp;                        // Borramos fisico
+&nbsp;                        val sql = &quot;DELETE FROM personajes WHERE id = ?&quot;
+&nbsp;                        val statement = db.prepareStatement(sql)!!
+&nbsp;                        statement.setLong(1, id)
+&nbsp;                        statement.executeUpdate()
+&nbsp;                    }
+&nbsp;                }
+&nbsp;            }
+&nbsp;            return personaje?.toPersonaje()
+&nbsp;        } catch (e: Exception) {
+&nbsp;            log.error { &quot;Error al borrar personaje con id $id&quot; }
+&nbsp;            throw PersonajesException.PersonajeNotDeletedException(&quot;Error al borrar personaje con id $id&quot;)
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun findByType(type: String): List&lt;Personaje&gt; {
+&nbsp;        log.debug { &quot;Buscando personajes por tipo $type&quot; }
+&nbsp;        try {
+&nbsp;            val personajes = mutableListOf&lt;Personaje&gt;()
+&nbsp;
+&nbsp;            DataBaseManager.use { db -&gt;
+&nbsp;                val sql = &quot;SELECT * FROM Personajes WHERE tipo = ?&quot;
+&nbsp;                val statement = db.prepareStatement(sql)!!
+&nbsp;                statement.setString(1,type)
+&nbsp;                val result = statement.executeQuery()
+&nbsp;                while (result.next()) {
+&nbsp;                    with(result) {
+&nbsp;                        val personaje = PersonajeDto(
+&nbsp;                            id = getLong(&quot;id&quot;),
+&nbsp;                            nombre = getString(&quot;nombre&quot;),
+&nbsp;                            tipo = getString(&quot;tipo&quot;),
+&nbsp;                            clase = getString(&quot;clase&quot;),
+&nbsp;                            habilidad = getString(&quot;habilidad&quot;),
+&nbsp;                            ataque = getInt(&quot;ataque&quot;),
+&nbsp;                            edad = getInt(&quot;edad&quot;),
+&nbsp;                            arma = getString(&quot;arma&quot;),
+&nbsp;                            createdAt = getString(&quot;created_at&quot;),
+&nbsp;                            updatedAt = getString(&quot;updated_at&quot;),
+&nbsp;                            isDeleted = getBoolean(&quot;is_deleted&quot;)
+&nbsp;                            ).toPersonaje()
+&nbsp;                        personajes.add(personaje)
+&nbsp;                    }
+&nbsp;                }
+&nbsp;            }
+&nbsp;
+&nbsp;            return personajes
+&nbsp;
+&nbsp;        } catch (e:Exception) {
+&nbsp;            log.error { &quot;Error buscando personajes por tipo $type&quot; }
+&nbsp;            throw PersonajesException.PersonajeNotFetchedException(&quot;Error buscando personajes por tipo $type&quot;)
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>

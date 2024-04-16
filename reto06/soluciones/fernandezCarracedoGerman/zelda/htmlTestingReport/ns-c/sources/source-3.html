@@ -1,0 +1,191 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > PersonajesServiceImplKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.services.personaje</a>
+</div>
+
+<h1>Coverage Summary for Class: PersonajesServiceImplKt (org.example.services.personaje)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PersonajesServiceImplKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.services.personaje
+&nbsp;
+&nbsp;import org.example.cache.Cache
+&nbsp;import org.example.config.Config
+&nbsp;import org.example.exceptions.personajes.PersonajesException
+&nbsp;import org.example.models.Personaje
+&nbsp;import org.example.repositories.personaje.PersonajeRepository
+&nbsp;import org.example.services.storage.base.Storage
+&nbsp;import org.example.validators.personaje.PersonajesValidator
+&nbsp;import org.lighthousegames.logging.logging
+&nbsp;
+<b class="fc">&nbsp;private val log = logging()</b>
+&nbsp;
+&nbsp;class PersonajesServiceImpl(
+&nbsp;    private val repository: PersonajeRepository,
+&nbsp;    private val storageCsv: Storage&lt;Personaje&gt;,
+&nbsp;    private val storageJson: Storage&lt;Personaje&gt;,
+&nbsp;    private val cache: Cache&lt;Personaje,Long&gt;,
+&nbsp;    private val validator: PersonajesValidator
+&nbsp;) : PersonajesService{
+&nbsp;
+&nbsp;    override fun findAll(): List&lt;Personaje&gt; {
+&nbsp;        log.debug { &quot;Recuperando todos los personajes&quot; }
+&nbsp;        return repository.findAll()
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun findById(id: Long): Personaje {
+&nbsp;        log.debug { &quot;Buscando personaje por id $id&quot; }
+&nbsp;        return cache.get(id)?: repository.findById(id)?.also {
+&nbsp;            cache.put(id,it)
+&nbsp;        }?: throw PersonajesException.PersonajeNotFound(&quot;Personaje no encontrado con id $id&quot;)
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun save(item: Personaje): Personaje {
+&nbsp;        log.debug { &quot;Guardando personaje $item&quot; }
+&nbsp;
+&nbsp;        log.debug { &quot;Validando personaje&quot; }
+&nbsp;        validator.validate(item)
+&nbsp;
+&nbsp;        return repository.save(item)
+&nbsp;            .also { cache.put(item.id,it) }
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun update(id: Long, item: Personaje): Personaje {
+&nbsp;        log.debug { &quot;Actualizando personaje id $id&quot; }
+&nbsp;
+&nbsp;        log.debug { &quot;Validando personaje&quot; }
+&nbsp;        validator.validate(item)
+&nbsp;
+&nbsp;        return repository.update(id, item).also {
+&nbsp;            cache.put(id, it!!)
+&nbsp;        } ?: throw PersonajesException.PersonajeNotUpdatedException(&quot;Personaje no se pudo modificar, id $id&quot;)
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun delete(id: Long, logical:Boolean): Personaje {
+&nbsp;        log.debug { &quot;Eliminando personaje id $id&quot; }
+&nbsp;        return repository.delete(id, logical).also {
+&nbsp;            cache.remove(id)
+&nbsp;        } ?: throw PersonajesException.PersonajeNotDeletedException(&quot;Personaje no se pudo eliminar, id $id&quot;)
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun findByType(type: String): List&lt;Personaje&gt; {
+&nbsp;        log.debug { &quot;Buscando personajes por tipo $type&quot; }
+&nbsp;        return repository.findByType(type)
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun storeToCsv(data: List&lt;Personaje&gt;, fileName: String): Boolean {
+&nbsp;        log.debug { &quot;Exportando personajes a fichero CSV&quot; }
+&nbsp;        return storageCsv.store(data, Config.storageFileExportCsv)
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun storeToJson(data: List&lt;Personaje&gt;, fileName: String): Boolean {
+&nbsp;        log.debug { &quot;Exportando personajes a fichero JSON&quot; }
+&nbsp;        return storageJson.store(data, Config.storageFileExportJson)
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun loadFromCsv(fileName: String): List&lt;Personaje&gt; {
+&nbsp;        log.debug { &quot;Cargando personajes desde fichero CSV&quot; }
+&nbsp;        return storageCsv.load(Config.storageFileImportCsv)
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun loadFromJson(fileName: String): List&lt;Personaje&gt; {
+&nbsp;        log.debug { &quot;Cargando personajes desde fichero JSON&quot; }
+&nbsp;        return storageJson.load(Config.storageFileImportJson)
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>

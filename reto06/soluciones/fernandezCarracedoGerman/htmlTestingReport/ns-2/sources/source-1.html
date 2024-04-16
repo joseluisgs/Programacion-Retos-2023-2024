@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > CacheImpl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example.cache</a>
+</div>
+
+<h1>Coverage Summary for Class: CacheImpl (org.example.cache)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CacheImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example.cache
+&nbsp;import org.example.config.Config
+&nbsp;import org.lighthousegames.logging.logging
+&nbsp;
+&nbsp;private val log = logging()
+&nbsp;
+<b class="nc">&nbsp;class CacheImpl&lt;T,KEY&gt; (</b>
+<b class="nc">&nbsp;    val size: Int = Config.cacheSize</b>
+&nbsp;) : Cache&lt;T,KEY&gt; {
+&nbsp;
+<b class="nc">&nbsp;    private val cache = mutableMapOf&lt;KEY,T&gt;()</b>
+&nbsp;
+&nbsp;    override fun get(key: KEY): T? {
+<b class="nc">&nbsp;        log.debug { &quot;Elemento obtenido de caché, clave: $key&quot; }</b>
+<b class="nc">&nbsp;        return cache[key]</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun put(key: KEY, value: T) {
+<b class="nc">&nbsp;        log.debug { &quot;Elemento guardado en caché, clave: $key&quot; }</b>
+<b class="nc">&nbsp;        if (cache.size &gt;= size &amp;&amp; !cache.containsKey(key)) {</b>
+<b class="nc">&nbsp;            val firstKey = cache.keys.first()</b>
+<b class="nc">&nbsp;            log.debug { &quot;Eliminando valor de la cache por clave $firstKey&quot; }</b>
+<b class="nc">&nbsp;            cache.remove(firstKey)</b>
+&nbsp;        }
+<b class="nc">&nbsp;        cache[key] = value</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun remove(key: KEY) {
+<b class="nc">&nbsp;        log.debug { &quot;Elemento eliminado de caché, clave: $key&quot; }</b>
+<b class="nc">&nbsp;        cache.remove(key)</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun clear() {
+<b class="nc">&nbsp;        log.debug { &quot;Limpiando la caché&quot; }</b>
+<b class="nc">&nbsp;        cache.clear()</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-16 12:34</div>
+</div>
+</body>
+</html>
