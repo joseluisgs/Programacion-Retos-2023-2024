@@ -74,7 +74,7 @@ class PersonajesRepositoryImpl:PersonajesRepository {
             personaje=item.toPersonajeDto()
             DataBaseManager.use {
                 val sql=
-                    "UPDATE personaje SET tipo = ?, habilidad = ?, ataque = ?, edad = ?, arma = ? WHERE nombre = ?"
+                    "UPDATE personajes SET tipo = ?, habilidad = ?, ataque = ?, edad = ?, arma = ? WHERE nombre = ?"
                 val statement = it.connection?.prepareStatement(sql)!!
                 statement.setString(1,personaje.tipo)
                 statement.setString(2, personaje.habilidad)
